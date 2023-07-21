@@ -1,12 +1,13 @@
 {
-  "enchantment.optional_enchants.ice_bow":           "Ice bow",
-  "enchantment.optional_enchants.ninja_style":       "Ninja style",
-  "enchantment.optional_enchants.angry_lumberjack" : "Angry Lumberjack",
+  "enchantment.optional_enchants.ice_bow":               "Ice bow",
+  "enchantment.optional_enchants.ninja_style":           "Ninja style",
+  "enchantment.optional_enchants.angry_lumberjack" :     "Angry Lumberjack",
+  "enchantment.optional_enchants.betrayer":              "Betrayer",
+  "enchantment.optional_enchants.end_harm":              "End harm",
 
-
-
-
-  "enchantment.optional_enchants.ice_bow.desc" :     "Give slowness to your enemies when you shoot it.",
-  "enchantment.optional_enchants.ninja_style.desc":  "When you kill any mob or player, you gain a slight speed boost.",
-  "enchantment.optional_enchants.angry_lumberjack.desc": "When you kill any mob or player, you gain a slight haste boost."
+  "enchantment.optional_enchants.ice_bow.desc" :         "Give slowness to your enemies when you shoot it.",
+  "enchantment.optional_enchants.ninja_style.desc":      "When you kill any mob or player, you gain a slight speed boost.",
+  "enchantment.optional_enchants.angry_lumberjack.desc": "When you kill any mob or player, you gain a slight haste boost.",
+  "enchantment.optional_enchants.betrayer.desc":         "Increases damage dealt to Illager enemies",
+  "enchantment.optional_enchants.end_harm.desc":         "Increases damage dealt to End enemies"
 }

@@ -1,8 +1,6 @@
 package binaris.optional_enchants;
 
-import binaris.optional_enchants.enchantment.AngryLumberjack_Enchantment;
-import binaris.optional_enchants.enchantment.Ice_Bow_Enchantment;
-import binaris.optional_enchants.enchantment.NinjaStyle_Enchantment;
+import binaris.optional_enchants.enchantment.*;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.enchantment.Enchantment;
@@ -16,8 +14,9 @@ public class Optional_Enchants implements ModInitializer {
 
 	public static Enchantment ICE_BOW = new Ice_Bow_Enchantment();
 	public static Enchantment NINJA_STYLE = new NinjaStyle_Enchantment();
-
 	public static Enchantment ANGRY_LUMBERJACK = new AngryLumberjack_Enchantment();
+	public static Enchantment BETRAYER = new Betrayer_Enchantment();
+	public static Enchantment END_HARM = new EndHarm_Enchantment();
 
 	public static final String MOD_ID = "optional_enchants";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
@@ -28,6 +27,9 @@ public class Optional_Enchants implements ModInitializer {
 		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "ice_bow"), ICE_BOW);
 		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "ninja_style"), NINJA_STYLE);
 		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "angry_lumberjack"), ANGRY_LUMBERJACK);
+		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "betrayer"), BETRAYER);
+		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "end_harm"), END_HARM);
+
 
 		LOGGER.info("Loading Optional Enchants");
 		LOGGER.info("Thanks for loading my mod! -Binaris");

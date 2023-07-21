@@ -1,4 +1,12 @@
 {
-  "enchantment.optional_enchants.ice_bow":          "Arco helado",
-  "enchantment.optional_enchants.ice_bow.desc":     "Da lentitud a tus enemigos cuando los disparas"
+  "enchantment.optional_enchants.ice_bow":               "Arco helado",
+  "enchantment.optional_enchants.ninja_style":           "Estilo Ninja",
+  "enchantment.optional_enchants.angry_lumberjack":      "Leñador enojado",
+  "enchantment.optional_enchants.betrayer":              "Traidor",
+  "enchantment.optional_enchants.end_harm":              "Daño al end",
+
+  "enchantment.optional_enchants.ice_bow.desc":          "Da lentitud a tus enemigos cuando los disparas",
+  "enchantment.optional_enchants.ninja_style.desc":      "Cuando matas a un enemigo o jugardor, obtienes una pequeña mejora de velocidad.",
+  "enchantment.optional_enchants.angry_lumberjack.desc": "Cuando matas a un enemigo o jugardor, obtienes una pequeña mejora de prisa minera.",
+  "enchantment.optional_enchants.betrayer.desc":         "Incrementa el daño hacia los Illagers"
 }
