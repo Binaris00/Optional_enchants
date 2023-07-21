@@ -15,21 +15,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntity.class)
 public class NinjaStyleMixin {
-
     @Inject(method = "onDeath", at = @At("HEAD"))
-    public void Ninja_kill(DamageSource source, CallbackInfo callbackInfo){
-        if(!(source.getAttacker() instanceof PlayerEntity)){return;}
+    public void Ninja_kill(DamageSource source, CallbackInfo callbackInfo) {
+        if (!(source.getAttacker() instanceof PlayerEntity)) {
 
-        LivingEntity user = (LivingEntity) source.getSource();
+            LivingEntity user = (LivingEntity) source.getSource();
 
-        if(user != null){
-            if(EnchantUtils.hasEnchant(user, Optional_Enchants.NINJA_STYLE, EquipmentSlot.MAINHAND)) {
+            if (user != null) {
+                if (EnchantUtils.hasEnchant(user, Optional_Enchants.NINJA_STYLE, EquipmentSlot.MAINHAND)) {
 
-                int level = EnchantUtils.getLevel(user, Optional_Enchants.NINJA_STYLE);
-                EnchantUtils.appendDuration(user, StatusEffects.SPEED, 20 * level, 0);
+                    int level = EnchantUtils.getLevel(user, Optional_Enchants.NINJA_STYLE);
+                    EnchantUtils.appendDuration(user, StatusEffects.SPEED, 20 * level, 0);
+                }
             }
         }
-
-
     }
+
 }
