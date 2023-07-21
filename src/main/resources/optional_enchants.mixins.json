@@ -3,7 +3,9 @@
 	"package": "binaris.optional_enchants.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"NinjaStyleMixin",
+		"AngryLumberjackMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
