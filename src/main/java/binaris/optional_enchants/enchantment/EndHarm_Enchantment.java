@@ -1,5 +1,6 @@
 package binaris.optional_enchants.enchantment;
 
+import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
@@ -34,5 +35,9 @@ public class EndHarm_Enchantment extends Enchantment {
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
         return stack.getItem() instanceof AxeItem || super.isAcceptableItem(stack);
+    }
+    @Override
+    public boolean canAccept(Enchantment other) {
+        return !(other instanceof DamageEnchantment);
     }
 }
