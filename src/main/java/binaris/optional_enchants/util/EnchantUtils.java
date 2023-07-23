@@ -15,9 +15,18 @@ public class EnchantUtils {
         return EnchantmentHelper.getLevel(enchantment, livingEntity.getEquippedStack(slot)) >= 1;
     }
 
+    public static boolean hasEnchant(ItemStack itemStack, Enchantment enchantment){
+        return EnchantmentHelper.getLevel(enchantment, itemStack) >= 1;
+    }
+
     public static int getLevel(LivingEntity livingEntity, Enchantment enchantment){
         if(EnchantmentHelper.getLevel(enchantment, livingEntity.getMainHandStack()) >= 1){return EnchantmentHelper.getLevel(enchantment, livingEntity.getMainHandStack());}
         if(EnchantmentHelper.getLevel(enchantment,  livingEntity.getOffHandStack()) >= 1){return EnchantmentHelper.getLevel(enchantment, livingEntity.getOffHandStack());}
+        return 0;
+    }
+
+    public static int getLevel(LivingEntity livingEntity, Enchantment enchantment, EquipmentSlot slot){
+        if(EnchantmentHelper.getLevel(enchantment, livingEntity.getEquippedStack(slot)) >= 1){return EnchantmentHelper.getLevel(enchantment, livingEntity.getEquippedStack(slot));}
         return 0;
     }
 

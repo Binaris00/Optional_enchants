@@ -38,6 +38,6 @@ public class EndHarm_Enchantment extends Enchantment {
     }
     @Override
     public boolean canAccept(Enchantment other) {
-        return !(other instanceof DamageEnchantment);
+        return !(other instanceof DamageEnchantment || other instanceof NetherBane_Enchantment);
     }
 }

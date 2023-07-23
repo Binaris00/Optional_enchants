@@ -18,7 +18,6 @@ public class NinjaStyleMixin {
     @Inject(method = "onDeath", at = @At("HEAD"))
     public void Ninja_kill(DamageSource source, CallbackInfo callbackInfo) {
         if (!(source.getAttacker() instanceof PlayerEntity)) {
-
             LivingEntity user = (LivingEntity) source.getSource();
 
             if (user != null) {
