@@ -9,6 +9,7 @@
   "enchantment.optional_enchants.nether_bane":           "Nether bane",
   "enchantment.optional_enchants.skyward_shot":          "Skyward shot",
   "enchantment.optional_enchants.wither_aspect":         "Wither aspect",
+  "enchantment.optional_enchants.gravity_curse":         "Curse of gravity",
 
   "enchantment.optional_enchants.ice_bow.desc" :         "Give slowness to your enemies when you shoot it.",
   "enchantment.optional_enchants.ninja_style.desc":      "When you kill any mob or player, you gain a slight speed boost.",
@@ -19,5 +20,6 @@
   "enchantment.optional_enchants.gravitate.desc":        "You can control the levitation effect when you are sneaking",
   "enchantment.optional_enchants.nether_bane.desc":      "Increases damage dealt to Nether enemies",
   "enchantment.optional_enchants.skyward_shot.desc":     "Can give levitation to your enemies",
-  "enchantment.optional_enchants.wither_aspect.desc":    "Give wither effect to your enemies"
+  "enchantment.optional_enchants.wither_aspect.desc":    "Give wither effect to your enemies",
+  "enchantment.optional_enchants.gravity_curse.desc":    "Randomly inflicts the Levitation effect on you during combat"
 }

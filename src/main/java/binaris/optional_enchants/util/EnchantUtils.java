@@ -60,4 +60,12 @@ public class EnchantUtils {
         return !helmet.isEmpty() && !breastplate.isEmpty()
                 && !leggings.isEmpty() && !boots.isEmpty();
     }
+
+    public static boolean isEnchantType(Enchantment other, Enchantment[] type) {
+        if (type == null) return false;
+        for(Enchantment e : type) {
+            if (other == e) return true;
+        }
+        return false;
+    }
 }
