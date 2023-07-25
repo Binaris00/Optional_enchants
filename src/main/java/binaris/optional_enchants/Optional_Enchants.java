@@ -1,11 +1,13 @@
 package binaris.optional_enchants;
 
 import binaris.optional_enchants.enchantment.*;
+import binaris.optional_enchants.util.AnyAspectEnchantment;
 import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -16,19 +18,30 @@ public class Optional_Enchants implements ModInitializer {
 
 	//Enchants
 	public static Enchantment FAT = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.CHEST, EquipmentSlot.FEET},
-			20, 50, 1, false, false, new Enchantment[]{Enchantments.PROTECTION, Enchantments.PROJECTILE_PROTECTION, Enchantments.BLAST_PROTECTION, Enchantments.FIRE_PROTECTION}, null);
+			20,  1, false, false, new Enchantment[]{Enchantments.PROTECTION, Enchantments.PROJECTILE_PROTECTION, Enchantments.BLAST_PROTECTION, Enchantments.FIRE_PROTECTION}, null, true, true);
 	public static Enchantment GRAVITATE = new SimpleEnchantBuilder(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.ARMOR_LEGS, new EquipmentSlot[]{EquipmentSlot.LEGS},
-			30, 50, 3, false, true, new Enchantment[]{Enchantments.SWIFT_SNEAK}, null);
+			30, 3, false, true, new Enchantment[]{Enchantments.SWIFT_SNEAK}, null, false, false);
 	public static Enchantment NINJA_STYLE = new SimpleEnchantBuilder(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
-			1, 50, 4, false, false, null, null);
+			13, 4, false, false, null, null, true, true);
 	public static Enchantment ANGRY_LUMBERJACK = new SimpleEnchantBuilder(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
-			1, 50, 4, false, false, null, null);
+			13, 4, false, false, null, null, true, true);
+	public static Enchantment AUTO_SMELT = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
+			15, 1, false, false, new Enchantment[]{Enchantments.SILK_TOUCH}, null, true, true);
+
+
+	public static Enchantment WITHER_ASPECT = new AnyAspectEnchantment(StatusEffects.WITHER, 120, 1);
+	public static Enchantment POISON_ASPECT = new AnyAspectEnchantment(StatusEffects.POISON, 200, 1);
+	public static Enchantment SLOWNESS_ASPECT = new AnyAspectEnchantment(StatusEffects.SLOWNESS, 120, 1);
+	public static Enchantment FRAGILE_STRIKE = new AnyAspectEnchantment(StatusEffects.WEAKNESS, 80, 1);
+	public static Enchantment HUNGERING_STRIKE = new AnyAspectEnchantment(StatusEffects.HUNGER, 80, 0);
+
 
 	public static Enchantment ICE_BOW = new Ice_Bow_Enchantment();
 	public static Enchantment BETRAYER = new Betrayer_Enchantment();
 	public static Enchantment END_HARM = new EndHarm_Enchantment();
 	public static Enchantment SKYWARDSHOT = new SkywardShot_Enchantment();
-	public static Enchantment WITHERASPECT = new WitherAspect_Enchantment();
+	public static Enchantment HUNTING = new Hunting_Enchantment();
+
 
 
 	//Curses
@@ -48,7 +61,16 @@ public class Optional_Enchants implements ModInitializer {
 		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "fat"), FAT);
 		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "gravitate"), GRAVITATE);
 		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "skyward_shot"), SKYWARDSHOT);
-		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "wither_aspect"), WITHERASPECT);
+		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "hunting"), HUNTING);
+		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "auto_smelt"), AUTO_SMELT);
+
+		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "wither_aspect"), WITHER_ASPECT);
+		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "poison_aspect"), POISON_ASPECT);
+		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "slowness_aspect"), SLOWNESS_ASPECT);
+		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "fragile_strike"), FRAGILE_STRIKE);
+		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "hungering_strike"), HUNGERING_STRIKE);
+
+
 
 		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "gravity_curse"), GRAVITY_CURSE);
 

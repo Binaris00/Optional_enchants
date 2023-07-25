@@ -7,7 +7,8 @@
 		"NinjaStyleMixin",
 		"AngryLumberjackMixin",
 		"FatMixin",
-		"GravitateMixin"
+		"GravitateMixin",
+		"AutoSmeltMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

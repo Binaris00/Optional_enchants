@@ -8,18 +8,33 @@
   "enchantment.optional_enchants.gravitate" :            "Gravitate",
   "enchantment.optional_enchants.nether_bane":           "Nether bane",
   "enchantment.optional_enchants.skyward_shot":          "Skyward shot",
-  "enchantment.optional_enchants.wither_aspect":         "Wither aspect",
   "enchantment.optional_enchants.gravity_curse":         "Curse of gravity",
+  "enchantment.optional_enchants.hunting":               "Hunting",
+  "enchantment.optional_enchants.auto_smelt":            "Auto smelt",
+  "enchantment.optional_enchants.wither_aspect":         "Wither aspect",
+  "enchantment.optional_enchants.poison_aspect":         "Poison aspect",
+  "enchantment.optional_enchants.slowness_aspect":       "Slowness aspect",
+  "enchantment.optional_enchants.fragile_strike":        "Fragile strike",
+  "enchantment.optional_enchants.hungering_strike":      "Hungering strike",
+
+
 
   "enchantment.optional_enchants.ice_bow.desc" :         "Give slowness to your enemies when you shoot it.",
   "enchantment.optional_enchants.ninja_style.desc":      "When you kill any mob or player, you gain a slight speed boost.",
   "enchantment.optional_enchants.angry_lumberjack.desc": "When you kill any mob or player, you gain a slight haste boost.",
   "enchantment.optional_enchants.betrayer.desc":         "Increases damage dealt to Illager enemies",
   "enchantment.optional_enchants.end_harm.desc":         "Increases damage dealt to End enemies",
-  "enchantment.optional_enchants.fat.desc":              "Give you more hearts when you have",
+  "enchantment.optional_enchants.fat.desc":              "Grants the wearer additional hearts",
   "enchantment.optional_enchants.gravitate.desc":        "You can control the levitation effect when you are sneaking",
   "enchantment.optional_enchants.nether_bane.desc":      "Increases damage dealt to Nether enemies",
   "enchantment.optional_enchants.skyward_shot.desc":     "Can give levitation to your enemies",
+  "enchantment.optional_enchants.gravity_curse.desc":    "Randomly inflicts the Levitation effect on you during combat",
+  "enchantment.optional_enchants.hunting.desc":          "Increases damage dealt to Pigs, Sheeps, Cows, Chicken",
+  "enchantment.optional_enchants.auto_smelt.desc":       "Smelt the block that you mine",
+
   "enchantment.optional_enchants.wither_aspect.desc":    "Give wither effect to your enemies",
-  "enchantment.optional_enchants.gravity_curse.desc":    "Randomly inflicts the Levitation effect on you during combat"
+  "enchantment.optional_enchants.poison_aspect.desc":    "Give poison effect to your enemies",
+  "enchantment.optional_enchants.slowness_aspect.desc":  "Give slowness effect to your enemies",
+  "enchantment.optional_enchants.fragile_strike.desc":   "Give weakness effect to your enemies",
+  "enchantment.optional_enchants.hungering_strike.desc": "Give weakness effect to your enemies"
 }
