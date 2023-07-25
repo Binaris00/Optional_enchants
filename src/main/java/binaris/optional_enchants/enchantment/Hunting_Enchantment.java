@@ -6,8 +6,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.MiningToolItem;
 
 public class Hunting_Enchantment extends Enchantment {
     public Hunting_Enchantment() {
@@ -32,6 +32,6 @@ public class Hunting_Enchantment extends Enchantment {
 
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
-        return stack.getItem() instanceof MiningToolItem || super.isAcceptableItem(stack);
+        return stack.getItem() instanceof AxeItem || super.isAcceptableItem(stack);
     }
 }
