@@ -21,7 +21,20 @@ public class OptionalEnchants_Enchantments {
     static Map<SimpleEnchantBuilder, Boolean> ENCHANTS = new HashMap<>();
     static Map<AnyAspectEnchantment, Boolean> ENCHANTS_ASPECT = new HashMap<>();
 
+    //////////////////////////////////////////////////////////////////
+    // Herb's Extra Enchants
+    //////////////////////////////////////////////////////////////////
 
+    public static SimpleEnchantBuilder ARROW_SPEED = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND},
+            3, false, false, new Enchantment[]{Enchantments.POWER}, null, true, true, "arrow_speed");
+
+
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////
     public static SimpleEnchantBuilder FAT = new Fat_Enchantment(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.CHEST, EquipmentSlot.FEET},
             1, false, false, new Enchantment[]{Enchantments.PROTECTION, Enchantments.PROJECTILE_PROTECTION, Enchantments.BLAST_PROTECTION, Enchantments.FIRE_PROTECTION},
             null, true, true, "fat");
@@ -39,7 +52,7 @@ public class OptionalEnchants_Enchantments {
             null, true, true, "angry_lumberjack");
 
     public static SimpleEnchantBuilder AUTO_SMELT = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
-            1, false, false, new Enchantment[]{Enchantments.SILK_TOUCH},
+            1, false, false, new Enchantment[]{Enchantments.SILK_TOUCH, OptionalEnchants_Enchantments.TELEKINESIS},
             null, true, true, "auto_smelt");
 
     public static SimpleEnchantBuilder TELEKINESIS = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
@@ -53,12 +66,19 @@ public class OptionalEnchants_Enchantments {
     public static SimpleEnchantBuilder HUNTING = new Hunting_Enchantment();
     public static SimpleEnchantBuilder GRAVITY_CURSE = new Gravity_Curse();
     public static SimpleEnchantBuilder BREAKING_CURSE = new Breaking_Curse();
+    public static SimpleEnchantBuilder NETHER_BANE = new NetherBane_Enchantment();
+    public static SimpleEnchantBuilder BETRAYER = new Betrayer_Enchantment();
+
+
 
     public static AnyAspectEnchantment WITHER_ASPECT = new AnyAspectEnchantment(StatusEffects.WITHER, OptionalEnchantsConfig.CONFIG.getOrDefault("wither_aspect.effect_base_time", 120), OptionalEnchantsConfig.CONFIG.getOrDefault("wither_aspect.effect_amplifier", 1), "wither_aspect");
     public static AnyAspectEnchantment POISON_ASPECT = new AnyAspectEnchantment(StatusEffects.POISON, OptionalEnchantsConfig.CONFIG.getOrDefault("poison_aspect.effect_base_time", 200), OptionalEnchantsConfig.CONFIG.getOrDefault("poison_aspect.effect_amplifier", 1), "poison_aspect");
     public static AnyAspectEnchantment SLOWNESS_ASPECT = new AnyAspectEnchantment(StatusEffects.SLOWNESS, OptionalEnchantsConfig.CONFIG.getOrDefault("slowness_aspect.effect_base_time", 120), OptionalEnchantsConfig.CONFIG.getOrDefault("slowness_aspect.effect_amplifier", 1), "slowness_aspect");
     public static AnyAspectEnchantment FRAGILE_STRIKE = new AnyAspectEnchantment(StatusEffects.WEAKNESS, OptionalEnchantsConfig.CONFIG.getOrDefault("fragile_strike.effect_base_time", 80), OptionalEnchantsConfig.CONFIG.getOrDefault("fragile_strike.effect_amplifier", 1), "fragile_strike");
     public static AnyAspectEnchantment HUNGERING_STRIKE = new AnyAspectEnchantment(StatusEffects.HUNGER, OptionalEnchantsConfig.CONFIG.getOrDefault("hungering_strike.effect_base_time", 80), OptionalEnchantsConfig.CONFIG.getOrDefault("hungering_strike.effect_amplifier", 0), "hungering_strike");
+    //////////////////////////////////////////////////////////////////
+
+
 
     public static void registerEnchant(String name, Enchantment enchantment){
         Registry.register(Registries.ENCHANTMENT, new Identifier(Optional_Enchants.MOD_ID, name), enchantment);
@@ -78,12 +98,20 @@ public class OptionalEnchants_Enchantments {
         ENCHANTS.put(HUNTING, OptionalEnchantsConfig.CONFIG.getOrDefault("hunting.enable", true));
         ENCHANTS.put(GRAVITY_CURSE, OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.enable", true));
         ENCHANTS.put(BREAKING_CURSE, OptionalEnchantsConfig.CONFIG.getOrDefault("breaking_curse.enable", true));
+        ENCHANTS.put(NETHER_BANE, OptionalEnchantsConfig.CONFIG.getOrDefault("nether_bane.enable", true));
+        ENCHANTS.put(BETRAYER, OptionalEnchantsConfig.CONFIG.getOrDefault("betrayer.enable", true));
 
         ENCHANTS_ASPECT.put(WITHER_ASPECT, OptionalEnchantsConfig.CONFIG.getOrDefault("wither_aspect.enable", true));
         ENCHANTS_ASPECT.put(POISON_ASPECT, OptionalEnchantsConfig.CONFIG.getOrDefault("poison_aspect.enable", true));
         ENCHANTS_ASPECT.put(SLOWNESS_ASPECT, OptionalEnchantsConfig.CONFIG.getOrDefault("slowness_aspect.enable", true));
         ENCHANTS_ASPECT.put(FRAGILE_STRIKE, OptionalEnchantsConfig.CONFIG.getOrDefault("fragile_strike.enable", true));
         ENCHANTS_ASPECT.put(HUNGERING_STRIKE, OptionalEnchantsConfig.CONFIG.getOrDefault("hungering_strike.enable", true));
+
+
+
+
+
+        ENCHANTS.put(ARROW_SPEED, OptionalEnchantsConfig.CONFIG.getOrDefault("arrow_speed.enable", true));
 
 
         for (Map.Entry<SimpleEnchantBuilder, Boolean> set : ENCHANTS.entrySet()) {

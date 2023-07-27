@@ -1,5 +1,6 @@
 package binaris.optional_enchants.enchantment;
 
+import binaris.optional_enchants.config.OptionalEnchantsConfig;
 import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
@@ -20,7 +21,7 @@ public class Betrayer_Enchantment extends SimpleEnchantBuilder {
         if (target instanceof LivingEntity livingEntity) {
             if(livingEntity.getType() == EntityType.PILLAGER || livingEntity.getType() == EntityType.RAVAGER ||
                     livingEntity.getType() == EntityType.EVOKER || livingEntity.getType() == EntityType.VINDICATOR || livingEntity.getType() == EntityType.ILLUSIONER) {
-                target.damage(target.getWorld().getDamageSources().arrow(new ArrowEntity(user.getWorld(), user), user), 3.0F * level);
+                target.damage(target.getWorld().getDamageSources().arrow(new ArrowEntity(user.getWorld(), user), user), (float) OptionalEnchantsConfig.CONFIG.getOrDefault("betrayer.base_damage", 3.0F) * level);
                 int i = 20 + user.getRandom().nextInt(10 * level);
                 livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, i, 2));
             }

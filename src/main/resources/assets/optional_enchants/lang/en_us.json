@@ -33,12 +33,13 @@
   "enchantment.optional_enchants.gravity_curse.desc":    "Randomly inflicts the Levitation effect on you during combat",
   "enchantment.optional_enchants.hunting.desc":          "Increases damage dealt to Pigs, Sheeps, Cows, Chicken",
   "enchantment.optional_enchants.auto_smelt.desc":       "Smelt the block that you mine",
+  "enchantment.optional_enchants.breaking_curse.desc" :  "Your items break more quickly",
 
   "enchantment.optional_enchants.wither_aspect.desc":    "Give wither effect to your enemies",
   "enchantment.optional_enchants.poison_aspect.desc":    "Give poison effect to your enemies",
   "enchantment.optional_enchants.slowness_aspect.desc":  "Give slowness effect to your enemies",
   "enchantment.optional_enchants.fragile_strike.desc":   "Give weakness effect to your enemies",
   "enchantment.optional_enchants.hungering_strike.desc": "Give weakness effect to your enemies",
-
-  "enchantment.optional_enchants.telekinesis.desc":      ""
+  
+  "enchantment.optional_enchants.telekinesis.desc":      "Allows players to magically retrieve items from a distance"
 }

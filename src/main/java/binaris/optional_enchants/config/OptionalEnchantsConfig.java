@@ -93,7 +93,7 @@ public class OptionalEnchantsConfig {
 
         configs.emptyLine();
 
-        configs.addComment("Hungering Strike enchantment config");
+        configs.addComment("End Harm enchantment config");
         configs.addKeyValuePair(new Pair<>("end_harm.enable", true), "boolean");
         configs.addKeyValuePair(new Pair<>("end_harm.attack_damage", 3.0F), "float");
 
@@ -123,6 +123,18 @@ public class OptionalEnchantsConfig {
 
         configs.addComment("Breaking curse config");
         configs.addKeyValuePair(new Pair<>("breaking_curse.enable", true), "boolean");
+
+        configs.emptyLine();
+
+        configs.addComment("Nether Bane enchantment config");
+        configs.addKeyValuePair(new Pair<>("nether_bane.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("nether_base.base_damage", 3.0F), "float");
+
+        configs.emptyLine();
+
+        configs.addComment("Betrayer enchantment config");
+        configs.addKeyValuePair(new Pair<>("betrayer.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("betrayer.base_damage", 3.0F), "float");
 
     }
 

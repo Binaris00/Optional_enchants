@@ -1,5 +1,7 @@
 package binaris.optional_enchants.enchantment;
 
+import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -7,10 +9,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.ItemStack;
 
-public class NetherBane_Enchantment extends Enchantment {
+public class NetherBane_Enchantment extends SimpleEnchantBuilder {
+
+
     public NetherBane_Enchantment() {
-        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND}, 5, false, false, null, null, true, true, "nether_bane");
     }
 
     @Override
@@ -34,8 +40,13 @@ public class NetherBane_Enchantment extends Enchantment {
             if(livingEntity.getType() == EntityType.ZOMBIFIED_PIGLIN || livingEntity.getType() == EntityType.PIGLIN ||
                     livingEntity.getType() == EntityType.PIGLIN_BRUTE || livingEntity.getType() == EntityType.HOGLIN || livingEntity.getType() == EntityType.ZOGLIN){
 
-                target.damage(target.getWorld().getDamageSources().mobAttack(user), 3.0F * level);
+                target.damage(target.getWorld().getDamageSources().mobAttack(user), (float) (OptionalEnchantsConfig.CONFIG.getOrDefault("nether_base.base_damage", 3.0F) * level));
             }
         }
+    }
+
+    @Override
+    public boolean isAcceptableItem(ItemStack stack) {
+        return stack.getItem() instanceof AxeItem || super.isAcceptableItem(stack);
     }
 }
