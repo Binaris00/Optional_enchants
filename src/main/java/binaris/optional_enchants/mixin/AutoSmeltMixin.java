@@ -1,6 +1,6 @@
 package binaris.optional_enchants.mixin;
 
-import binaris.optional_enchants.Optional_Enchants;
+import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -29,7 +29,7 @@ public class AutoSmeltMixin {
         List<ItemStack> itemStacks = new ArrayList<>();
         List<ItemStack> returnValue = cir.getReturnValue();
 
-        if(EnchantUtils.hasEnchant(stack, Optional_Enchants.AUTO_SMELT)){
+        if(EnchantUtils.hasEnchant(stack, OptionalEnchants_Enchantments.AUTO_SMELT)){
 
             for(ItemStack item : returnValue){
                 Optional<SmeltingRecipe> recipe = world.getRecipeManager().getFirstMatch(RecipeType.SMELTING, new SimpleInventory(item), world);

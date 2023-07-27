@@ -5,14 +5,12 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.MiningToolItem;
 import org.jetbrains.annotations.Nullable;
 
 public class SimpleEnchantBuilder extends Enchantment {
     Rarity rarity;
     EnchantmentTarget target;
     EquipmentSlot[] equipmentSlots;
-    int minPower;
     int maxLevel;
     boolean isCursed;
     boolean isTreasure;
@@ -20,14 +18,14 @@ public class SimpleEnchantBuilder extends Enchantment {
     @Nullable Item[] applyTo;
     boolean forBookOffer;
     boolean inEnchantingTable;
+    String id;
 
-    public SimpleEnchantBuilder(Rarity weight, EnchantmentTarget type, EquipmentSlot[] equipmentSlots, int minPower, int maxLevel, boolean isCursed, boolean isTreasure, Enchantment[] incompatibleEnchantments, Item[] applyTo, boolean forBookOffer, boolean inEnchantingTable) {
+    public SimpleEnchantBuilder(Rarity weight, EnchantmentTarget type, EquipmentSlot[] equipmentSlots, int maxLevel, boolean isCursed, boolean isTreasure, Enchantment[] incompatibleEnchantments, Item[] applyTo, boolean forBookOffer, boolean inEnchantingTable, String id) {
         super(weight, type, equipmentSlots);
 
         this.rarity = weight;
         this.target = type;
         this.equipmentSlots = equipmentSlots;
-        this.minPower = minPower;
         this.maxLevel = maxLevel;
         this.isCursed = isCursed;
         this.isTreasure = isTreasure;
@@ -35,7 +33,7 @@ public class SimpleEnchantBuilder extends Enchantment {
         this.applyTo = applyTo;
         this.forBookOffer = forBookOffer;
         this.inEnchantingTable = inEnchantingTable;
-
+        this.id = id;
     }
 
     @Override
@@ -77,8 +75,6 @@ public class SimpleEnchantBuilder extends Enchantment {
 
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
-        if(target == EnchantmentTarget.DIGGER && applyTo == null){return stack.getItem() instanceof MiningToolItem;}
-
         if(applyTo != null) {
             for (Item i : applyTo) {
                 if (stack.getItem() == i) {
@@ -86,7 +82,7 @@ public class SimpleEnchantBuilder extends Enchantment {
                 }
             }
         }
-        return false;
+        return super.isAcceptableItem(stack);
     }
 
     @Override
@@ -110,7 +106,7 @@ public class SimpleEnchantBuilder extends Enchantment {
     }
 
     @Override
-    public boolean isAvailableForEnchantedBookOffer() {
-        return forBookOffer;
-    }
+    public boolean isAvailableForEnchantedBookOffer() {return forBookOffer;}
+
+    public String getId(){return this.id;}
 }

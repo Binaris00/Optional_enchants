@@ -16,6 +16,8 @@
   "enchantment.optional_enchants.slowness_aspect":       "Slowness aspect",
   "enchantment.optional_enchants.fragile_strike":        "Fragile strike",
   "enchantment.optional_enchants.hungering_strike":      "Hungering strike",
+  "enchantment.optional_enchants.breaking_curse":        "Curse of breaking",
+  "enchantment.optional_enchants.telekinesis":           "Telekinesis",
 
 
 
@@ -36,5 +38,7 @@
   "enchantment.optional_enchants.poison_aspect.desc":    "Give poison effect to your enemies",
   "enchantment.optional_enchants.slowness_aspect.desc":  "Give slowness effect to your enemies",
   "enchantment.optional_enchants.fragile_strike.desc":   "Give weakness effect to your enemies",
-  "enchantment.optional_enchants.hungering_strike.desc": "Give weakness effect to your enemies"
+  "enchantment.optional_enchants.hungering_strike.desc": "Give weakness effect to your enemies",
+
+  "enchantment.optional_enchants.telekinesis.desc":      ""
 }

@@ -1,5 +1,7 @@
 package binaris.optional_enchants.enchantment;
 
+import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -9,9 +11,11 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
-public class EndHarm_Enchantment extends Enchantment {
+public class EndHarm_Enchantment extends SimpleEnchantBuilder {
+
+
     public EndHarm_Enchantment() {
-        super(Rarity.VERY_RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND}, 5, false, false, null, null, true, true, "end_harm");
     }
 
     @Override
@@ -19,7 +23,7 @@ public class EndHarm_Enchantment extends Enchantment {
         if(target instanceof LivingEntity livingEntity) {
             if(target.getType() == EntityType.ENDERMAN || target.getType() == EntityType.ENDERMITE || target.getType() == EntityType.ENDER_DRAGON || target.getType() == EntityType.SHULKER) {
 
-                target.damage(target.getWorld().getDamageSources().mobAttack(user), 3.0F * level);
+                target.damage(target.getWorld().getDamageSources().mobAttack(user), (float) (OptionalEnchantsConfig.CONFIG.getOrDefault("end_harm.attack_damage", 3.0F) * level));
                 int i = 20 + user.getRandom().nextInt(10 * level);
                 livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, i, 3));
             }

@@ -1,11 +1,12 @@
 package binaris.optional_enchants.mixin;
 
-
-import binaris.optional_enchants.Optional_Enchants;
+import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.enchantment.Fat_Enchantment;
+import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -24,13 +25,21 @@ public abstract class FatMixin {
         LivingEntity livingEntity = (LivingEntity) (Object) this;
         int armor = 0;
 
-        for(ItemStack stack : getArmorItems()){
-            if(EnchantUtils.hasEnchant(stack, Optional_Enchants.FAT)){
+        for(ItemStack stack : getArmorItems()) {
+            if (EnchantUtils.hasEnchant(stack, OptionalEnchants_Enchantments.FAT)) {
                 armor += 1;
             }
+
+            if (livingEntity.getAttributes().hasModifierForAttribute(EntityAttributes.GENERIC_MAX_HEALTH, Fat_Enchantment.getUUID())) {
+                livingEntity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).removeModifier(Fat_Enchantment.getUUID());
+            }
         }
-        if(armor != 0){
-            livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 200, armor == 4 ? 4 : armor - 1));
+
+
+
+        if(!livingEntity.getAttributes().hasModifierForAttribute(EntityAttributes.GENERIC_MAX_HEALTH, Fat_Enchantment.getUUID())){
+            EntityAttributeModifier attribute = new EntityAttributeModifier(Fat_Enchantment.getUUID(), "Fat_enchantment", OptionalEnchantsConfig.CONFIG.getOrDefault("fat.hearts_addition", 4.5D) * armor, EntityAttributeModifier.Operation.ADDITION);
+            livingEntity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addTemporaryModifier(attribute);
         }
 
     }

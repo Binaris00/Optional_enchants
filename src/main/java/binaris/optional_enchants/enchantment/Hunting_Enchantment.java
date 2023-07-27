@@ -1,6 +1,7 @@
 package binaris.optional_enchants.enchantment;
 
-import net.minecraft.enchantment.Enchantment;
+import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -9,9 +10,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
-public class Hunting_Enchantment extends Enchantment {
+public class Hunting_Enchantment extends SimpleEnchantBuilder {
+
+
     public Hunting_Enchantment() {
-        super(Rarity.COMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Rarity.COMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND}, 3, false, false, null,
+                null, true, true, "hunting");
     }
 
     @Override
@@ -20,7 +24,7 @@ public class Hunting_Enchantment extends Enchantment {
             if(livingEntity.getType() == EntityType.PIG || livingEntity.getType() == EntityType.COW ||
                     livingEntity.getType() == EntityType.CHICKEN || livingEntity.getType() == EntityType.SHEEP ||
                     livingEntity.getType() == EntityType.MOOSHROOM || livingEntity.getType() == EntityType.RABBIT){
-                target.damage(target.getWorld().getDamageSources().mobAttack(user), 5.0F * level);
+                target.damage(target.getWorld().getDamageSources().mobAttack(user), (float) OptionalEnchantsConfig.CONFIG.getOrDefault("hunting.damage", 5.0F) * level);
             }
         }
     }

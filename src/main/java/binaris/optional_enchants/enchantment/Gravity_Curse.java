@@ -1,6 +1,7 @@
 package binaris.optional_enchants.enchantment;
 
-import net.minecraft.enchantment.Enchantment;
+import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
@@ -8,9 +9,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 
-public class Gravity_Curse extends Enchantment {
+public class Gravity_Curse extends SimpleEnchantBuilder {
+
     public Gravity_Curse() {
-        super(Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET});
+        super(Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET},
+                1, true, false, null, null, true, false, "gravity_curse");
     }
 
     @Override
@@ -20,18 +23,18 @@ public class Gravity_Curse extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if(user.getRandom().nextInt(100) <= 20){
+        if(user.getRandom().nextInt(100) <= OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.probability", 20)){
             if(!user.hasStatusEffect(StatusEffects.LEVITATION)){
-                user.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, 200, 2));
+                user.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.effect_base_time", 200), OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.effect_amplifier", 2)));
             }
         }
     }
 
     @Override
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
-        if(user.getRandom().nextInt(100) <= 20){
+        if(user.getRandom().nextInt(100) <= OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.probability", 20)){
             if(!user.hasStatusEffect(StatusEffects.LEVITATION)){
-                user.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, 200, 2));
+                user.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.effect_base_time", 200), OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.effect_amplifier", 2)));
             }
         }
     }

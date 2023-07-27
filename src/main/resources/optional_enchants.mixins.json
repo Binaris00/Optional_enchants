@@ -8,7 +8,9 @@
 		"AngryLumberjackMixin",
 		"FatMixin",
 		"GravitateMixin",
-		"AutoSmeltMixin"
+		"AutoSmeltMixin",
+		"BreakingCurseMixin",
+		"TelekinesisMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

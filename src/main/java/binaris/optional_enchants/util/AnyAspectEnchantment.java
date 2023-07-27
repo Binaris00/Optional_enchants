@@ -16,12 +16,14 @@ public class AnyAspectEnchantment extends Enchantment{
     StatusEffect effect;
     int seconds;
     int amplifier;
+    String id;
 
-    public AnyAspectEnchantment(StatusEffect effect, int seconds, int amplifier) {
+    public AnyAspectEnchantment(StatusEffect effect, int seconds, int amplifier, String id) {
         super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
         this.effect = effect;
         this.seconds = seconds;
         this.amplifier = amplifier;
+        this.id = id;
     }
 
     @Override
@@ -51,6 +53,7 @@ public class AnyAspectEnchantment extends Enchantment{
     @Override
     public Enchantment.Rarity getRarity() {return Rarity.RARE;}
 
+    public String getId(){return this.id;}
 }
 
 

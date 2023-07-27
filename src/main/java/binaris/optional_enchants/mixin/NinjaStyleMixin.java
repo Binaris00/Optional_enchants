@@ -1,7 +1,8 @@
 package binaris.optional_enchants.mixin;
 
 
-import binaris.optional_enchants.Optional_Enchants;
+import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -21,10 +22,11 @@ public class NinjaStyleMixin {
             LivingEntity user = (LivingEntity) source.getSource();
 
             if (user != null) {
-                if (EnchantUtils.hasEnchant(user, Optional_Enchants.NINJA_STYLE, EquipmentSlot.MAINHAND)) {
+                if (EnchantUtils.hasEnchant(user, OptionalEnchants_Enchantments.NINJA_STYLE, EquipmentSlot.MAINHAND)) {
 
-                    int level = EnchantUtils.getLevel(user, Optional_Enchants.NINJA_STYLE);
-                    EnchantUtils.appendDuration(user, StatusEffects.SPEED, 20 * level, 0);
+                    int level = EnchantUtils.getLevel(user, OptionalEnchants_Enchantments.NINJA_STYLE);
+                    EnchantUtils.appendDuration(user, StatusEffects.SPEED, OptionalEnchantsConfig.CONFIG.getOrDefault("ninja_style.effect_base_time", 20) * level,
+                            OptionalEnchantsConfig.CONFIG.getOrDefault("ninja_style.effect.amplifier", 0));
                 }
             }
         }

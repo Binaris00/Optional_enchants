@@ -1,15 +1,18 @@
 package binaris.optional_enchants.enchantment;
 
-import net.minecraft.enchantment.Enchantment;
+import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.projectile.ArrowEntity;
 
-public class Betrayer_Enchantment extends Enchantment {
+public class Betrayer_Enchantment extends SimpleEnchantBuilder {
+
+
     public Betrayer_Enchantment() {
-        super(Rarity.VERY_RARE, EnchantmentTarget.CROSSBOW, new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.CROSSBOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+                4, false, false, null, null, true, true, "betrayer");
     }
 
     @Override

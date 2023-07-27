@@ -30,6 +30,11 @@ public class EnchantUtils {
         return 0;
     }
 
+    public static int getLevel(ItemStack stack, Enchantment enchantment){
+        if (EnchantmentHelper.getLevel(enchantment, stack) >= 1) {return EnchantmentHelper.getLevel(enchantment, stack);}
+        return 0;
+    }
+
     public static void appendDuration(LivingEntity livingEntity, StatusEffect status, int more_duration, int amplifier){
         if(livingEntity.hasStatusEffect(status)){
             int old_duration = livingEntity.getStatusEffect(status).getDuration();
