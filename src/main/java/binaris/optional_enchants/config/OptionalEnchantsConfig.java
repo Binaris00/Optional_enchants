@@ -136,6 +136,34 @@ public class OptionalEnchantsConfig {
         configs.addKeyValuePair(new Pair<>("betrayer.enable", true), "boolean");
         configs.addKeyValuePair(new Pair<>("betrayer.base_damage", 3.0F), "float");
 
+        configs.emptyLine();
+
+        configs.addComment("Arrow Speed enchantment config");
+        configs.addKeyValuePair(new Pair<>("arrow_speed.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("arrow_speed.velocitymult", 0.15F), "float");
+
+        configs.emptyLine();
+
+        configs.addComment("Explosive enchantment config");
+        configs.addKeyValuePair(new Pair<>("explosive.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("explosive.base_damage", 2.0F), "float");
+
+        configs.emptyLine();
+
+        configs.addComment("Ender enchantment config");
+        configs.addKeyValuePair(new Pair<>("ender.enable", true), "boolean");
+
+        configs.emptyLine();
+
+        configs.addComment("Exposing enchantment config");
+        configs.addKeyValuePair(new Pair<>("exposing.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("exposing.effect_base_time", 40), "(this in ticks)");
+
+        configs.emptyLine();
+
+        configs.addKeyValuePair(new Pair<>("thunderbolt.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("thunderbolt.probability", 30), "int (max 100)");
+
     }
 
 }

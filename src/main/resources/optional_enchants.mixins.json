@@ -3,14 +3,16 @@
 	"package": "binaris.optional_enchants.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin",
 		"NinjaStyleMixin",
 		"AngryLumberjackMixin",
 		"FatMixin",
 		"GravitateMixin",
 		"AutoSmeltMixin",
 		"BreakingCurseMixin",
-		"TelekinesisMixin"
+		"TelekinesisMixin",
+		"ArrowSpeedMixin",
+		"ExplosiveMixin",
+		"EnderMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

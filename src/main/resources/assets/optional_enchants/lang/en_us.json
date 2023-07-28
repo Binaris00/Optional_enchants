@@ -19,6 +19,13 @@
   "enchantment.optional_enchants.breaking_curse":        "Curse of breaking",
   "enchantment.optional_enchants.telekinesis":           "Telekinesis",
 
+  "enchantment.optional_enchants.arrow_speed":           "Arrow speed",
+  "enchantment.optional_enchants.explosive":             "Explosive",
+  "enchantment.optional_enchants.ender":                 "Ender",
+  "enchantment.optional_enchants.exposing":              "Exposing",
+  "enchantment.optional_enchants.thunderbolt":           "Thunderbolt",
+
+
 
 
   "enchantment.optional_enchants.ice_bow.desc" :         "Give slowness to your enemies when you shoot it.",
@@ -41,5 +48,12 @@
   "enchantment.optional_enchants.fragile_strike.desc":   "Give weakness effect to your enemies",
   "enchantment.optional_enchants.hungering_strike.desc": "Give weakness effect to your enemies",
   
-  "enchantment.optional_enchants.telekinesis.desc":      "Allows players to magically retrieve items from a distance"
+  "enchantment.optional_enchants.telekinesis.desc":      "Allows players to magically retrieve items from a distance",
+
+
+  "enchantment.optional_enchants.arrow_speed.desc":      "",
+  "enchantment.optional_enchants.explosive.desc":        "",
+  "enchantment.optional_enchants.ender.desc":            "",
+  "enchantment.optional_enchants.exposing.desc":         "",
+  "enchantment.optional_enchants.thunderbolt.desc":      ""
 }

@@ -26,13 +26,17 @@ public class OptionalEnchants_Enchantments {
     //////////////////////////////////////////////////////////////////
 
     public static SimpleEnchantBuilder ARROW_SPEED = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND},
-            3, false, false, new Enchantment[]{Enchantments.POWER}, null, true, true, "arrow_speed");
+            3, false, false, null, null, true, true, "arrow_speed");
 
+    public static SimpleEnchantBuilder EXPLOSIVE = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            2, false, false, new Enchantment[]{Enchantments.POWER, Enchantments.INFINITY}, null, true, true, "explosive");
 
+    public static SimpleEnchantBuilder ENDER = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND},
+            1, false, false, new Enchantment[]{Enchantments.POWER, Enchantments.INFINITY, OptionalEnchants_Enchantments.EXPLOSIVE}, null, true, true, "ender");
 
+    public static SimpleEnchantBuilder EXPOSING = new Exposing_Enchantment();
 
-
-
+    public static SimpleEnchantBuilder THUNDERBOLT = new Thunderbolt_Enchantment();
 
     //////////////////////////////////////////////////////////////////
     public static SimpleEnchantBuilder FAT = new Fat_Enchantment(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.CHEST, EquipmentSlot.FEET},
@@ -112,6 +116,10 @@ public class OptionalEnchants_Enchantments {
 
 
         ENCHANTS.put(ARROW_SPEED, OptionalEnchantsConfig.CONFIG.getOrDefault("arrow_speed.enable", true));
+        ENCHANTS.put(EXPLOSIVE, OptionalEnchantsConfig.CONFIG.getOrDefault("explosive.enable", true));
+        ENCHANTS.put(ENDER, OptionalEnchantsConfig.CONFIG.getOrDefault("ender.enable", true));
+        ENCHANTS.put(EXPOSING, OptionalEnchantsConfig.CONFIG.getOrDefault("exposing.enable", true));
+        ENCHANTS.put(THUNDERBOLT, OptionalEnchantsConfig.CONFIG.getOrDefault("thunderbolt.enable", true));
 
 
         for (Map.Entry<SimpleEnchantBuilder, Boolean> set : ENCHANTS.entrySet()) {
