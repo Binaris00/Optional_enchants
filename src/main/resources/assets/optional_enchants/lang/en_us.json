@@ -1,73 +1,126 @@
 {
   "enchantment.optional_enchants.ice_bow":               "Ice bow",
+  "enchantment.optional_enchants.ice_bow.desc" :         "Give slowness to your enemies when you shoot it",
+
+
   "enchantment.optional_enchants.ninja_style":           "Ninja style",
+  "enchantment.optional_enchants.ninja_style.desc":      "When you kill any mob or player, you gain a slight speed boost",
+
+
   "enchantment.optional_enchants.angry_lumberjack" :     "Angry Lumberjack",
+  "enchantment.optional_enchants.angry_lumberjack.desc": "When you kill any mob or player, you gain a slight haste boost",
+
+
   "enchantment.optional_enchants.betrayer":              "Betrayer",
-  "enchantment.optional_enchants.end_harm":              "End harm",
-  "enchantment.optional_enchants.fat":                   "Fat",
-  "enchantment.optional_enchants.gravitate" :            "Gravitate",
-  "enchantment.optional_enchants.nether_bane":           "Nether bane",
-  "enchantment.optional_enchants.skyward_shot":          "Skyward shot",
-  "enchantment.optional_enchants.gravity_curse":         "Curse of gravity",
-  "enchantment.optional_enchants.hunting":               "Hunting",
-  "enchantment.optional_enchants.auto_smelt":            "Auto smelt",
-  "enchantment.optional_enchants.wither_aspect":         "Wither aspect",
-  "enchantment.optional_enchants.poison_aspect":         "Poison aspect",
-  "enchantment.optional_enchants.slowness_aspect":       "Slowness aspect",
-  "enchantment.optional_enchants.fragile_strike":        "Fragile strike",
-  "enchantment.optional_enchants.hungering_strike":      "Hungering strike",
-  "enchantment.optional_enchants.breaking_curse":        "Curse of breaking",
-  "enchantment.optional_enchants.telekinesis":           "Telekinesis",
-
-  "enchantment.optional_enchants.arrow_speed":           "Arrow speed",
-  "enchantment.optional_enchants.explosive":             "Explosive",
-  "enchantment.optional_enchants.ender":                 "Ender",
-  "enchantment.optional_enchants.exposing":              "Exposing",
-  "enchantment.optional_enchants.thunderbolt":           "Thunderbolt",
-  "enchantment.optional_enchants.barbaric":              "Barbaric",
-  "enchantment.optional_enchants.cleaving":              "Cleaving",
-  "enchantment.optional_enchants.terraforming":          "Terraforming",
-  "enchantment.optional_enchants.launching":             "Launching",
-  "enchantment.optional_enchants.night_vision":          "Night vision",
-  "enchantment.optional_enchants.berserk":               "Berserk",
-  "enchantment.optional_enchants.soulbound":             "Soulbound",
-
-
-
-
-  "enchantment.optional_enchants.ice_bow.desc" :         "Give slowness to your enemies when you shoot it.",
-  "enchantment.optional_enchants.ninja_style.desc":      "When you kill any mob or player, you gain a slight speed boost.",
-  "enchantment.optional_enchants.angry_lumberjack.desc": "When you kill any mob or player, you gain a slight haste boost.",
   "enchantment.optional_enchants.betrayer.desc":         "Increases damage dealt to Illager enemies",
+
+
+  "enchantment.optional_enchants.end_harm":              "End harm",
   "enchantment.optional_enchants.end_harm.desc":         "Increases damage dealt to End enemies",
+
+  "enchantment.optional_enchants.fat":                   "Fat",
   "enchantment.optional_enchants.fat.desc":              "Grants the wearer additional hearts",
+
+
+  "enchantment.optional_enchants.gravitate" :            "Gravitate",
   "enchantment.optional_enchants.gravitate.desc":        "You can control the levitation effect when you are sneaking",
+
+
+  "enchantment.optional_enchants.nether_bane":           "Nether bane",
   "enchantment.optional_enchants.nether_bane.desc":      "Increases damage dealt to Nether enemies",
+
+
+  "enchantment.optional_enchants.skyward_shot":          "Skyward shot",
   "enchantment.optional_enchants.skyward_shot.desc":     "Can give levitation to your enemies",
+
+
+  "enchantment.optional_enchants.gravity_curse":         "Curse of gravity",
   "enchantment.optional_enchants.gravity_curse.desc":    "Randomly inflicts the Levitation effect on you during combat",
+
+
+  "enchantment.optional_enchants.hunting":               "Hunting",
   "enchantment.optional_enchants.hunting.desc":          "Increases damage dealt to Pigs, Sheeps, Cows, Chicken",
+
+
+  "enchantment.optional_enchants.auto_smelt":            "Auto smelt",
   "enchantment.optional_enchants.auto_smelt.desc":       "Smelt the block that you mine",
+
+
+  "enchantment.optional_enchants.wither_aspect":         "Wither aspect",
+  "enchantment.optional_enchants.wither_aspect.desc":    "Give wither effect to your enemies",
+
+
+  "enchantment.optional_enchants.poison_aspect":         "Poison aspect",
+  "enchantment.optional_enchants.poison_aspect.desc":    "Give poison effect to your enemies",
+
+
+  "enchantment.optional_enchants.slowness_aspect":       "Slowness aspect",
+  "enchantment.optional_enchants.slowness_aspect.desc":  "Give slowness effect to your enemies",
+
+
+  "enchantment.optional_enchants.fragile_strike":        "Fragile strike",
+  "enchantment.optional_enchants.fragile_strike.desc":   "Give weakness effect to your enemies",
+
+
+  "enchantment.optional_enchants.hungering_strike":      "Hungering strike",
+  "enchantment.optional_enchants.hungering_strike.desc": "Give weakness effect to your enemies",
+
+
+  "enchantment.optional_enchants.breaking_curse":        "Curse of breaking",
   "enchantment.optional_enchants.breaking_curse.desc" :  "Your items break more quickly",
 
-  "enchantment.optional_enchants.wither_aspect.desc":    "Give wither effect to your enemies",
-  "enchantment.optional_enchants.poison_aspect.desc":    "Give poison effect to your enemies",
-  "enchantment.optional_enchants.slowness_aspect.desc":  "Give slowness effect to your enemies",
-  "enchantment.optional_enchants.fragile_strike.desc":   "Give weakness effect to your enemies",
-  "enchantment.optional_enchants.hungering_strike.desc": "Give weakness effect to your enemies",
-  
+  "enchantment.optional_enchants.telekinesis":           "Telekinesis",
   "enchantment.optional_enchants.telekinesis.desc":      "Allows players to magically retrieve items from a distance",
 
 
-  "enchantment.optional_enchants.arrow_speed.desc":      "",
-  "enchantment.optional_enchants.explosive.desc":        "",
-  "enchantment.optional_enchants.ender.desc":            "",
-  "enchantment.optional_enchants.exposing.desc":         "",
-  "enchantment.optional_enchants.thunderbolt.desc":      "",
-  "enchantment.optional_enchants.barbaric.desc":         "",
-  "enchantment.optional_enchants.cleaving.desc":         "",
-  "enchantment.optional_enchants.terraforming.desc":     "",
-  "enchantment.optional_enchants.launching.desc":        "",
-  "enchantment.optional_enchants.night_vision.desc":     "",
-  "enchantment.optional_enchants.berserk.desc":          "",
-  "enchantment.optional_enchants.soulbound.desc":        ""
+
+
+
+
+  "enchantment.optional_enchants.arrow_speed":           "Arrow speed",
+  "enchantment.optional_enchants.arrow_speed.desc":      "Your arrows fly faster",
+
+
+  "enchantment.optional_enchants.explosive":             "Explosive",
+  "enchantment.optional_enchants.explosive.desc":        "On fully charged shot: arrows explode on contact",
+
+
+  "enchantment.optional_enchants.ender":                 "Ender",
+  "enchantment.optional_enchants.ender.desc":            "On fully charged shot: teleport to arrow hit location",
+
+
+  "enchantment.optional_enchants.exposing":              "Exposing",
+  "enchantment.optional_enchants.exposing.desc":         "Arrows inflict Glowing, and enemies may take more damage",
+
+
+  "enchantment.optional_enchants.thunderbolt":           "Thunderbolt",
+  "enchantment.optional_enchants.thunderbolt.desc":      "Arrows summon lightning on hit",
+
+
+  "enchantment.optional_enchants.barbaric":              "Barbaric",
+  "enchantment.optional_enchants.barbaric.desc":         "Deal more damage the less armor you have",
+
+
+  "enchantment.optional_enchants.cleaving":              "Cleaving",
+  "enchantment.optional_enchants.cleaving.desc":         "Pierces a portion of enemy armor",
+
+
+  "enchantment.optional_enchants.terraforming":          "Terraforming",
+  "enchantment.optional_enchants.terraforming.desc":     "Massive increase in mining speed, but blocks drop nothing",
+
+
+  "enchantment.optional_enchants.launching":             "Launching",
+  "enchantment.optional_enchants.launching.desc":        "Trident throws propel you forward",
+
+
+  "enchantment.optional_enchants.night_vision":          "Night vision",
+  "enchantment.optional_enchants.night_vision.desc":     "On sneak: gain Night Vision",
+
+
+  "enchantment.optional_enchants.berserk":               "Berserk",
+  "enchantment.optional_enchants.berserk.desc":          "The more health you've lost, the more damage you deal",
+
+
+  "enchantment.optional_enchants.soulbound":             "Soulbound",
+  "enchantment.optional_enchants.soulbound.desc":        "Item stays in inventory after death"
 }

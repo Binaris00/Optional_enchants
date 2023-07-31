@@ -43,9 +43,6 @@ public class OptionalEnchants_Enchantments {
     public static SimpleEnchantBuilder NIGHT_VISION = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR_HEAD, new EquipmentSlot[]{EquipmentSlot.HEAD},
             1, false, false, null, null, true, true, "night_vision");
 
-    public static SimpleEnchantBuilder BERSERK = new SimpleEnchantBuilder(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST},
-            3, false, false, new Enchantment[]{Enchantments.PROTECTION, Enchantments.PROJECTILE_PROTECTION, Enchantments.BLAST_PROTECTION, Enchantments.FIRE_PROTECTION, OptionalEnchants_Enchantments.FAT}, null, true, true, "berserk");
-
     public static SimpleEnchantBuilder SOULBOUND = new SimpleEnchantBuilder(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.BREAKABLE, new EquipmentSlot[]{},
             1, false, true, null, null, true, false, "soulbound");
 
@@ -143,7 +140,6 @@ public class OptionalEnchants_Enchantments {
         ENCHANTS.put(CLEAVING, OptionalEnchantsConfig.CONFIG.getOrDefault("cleaving.enable", true));
         ENCHANTS.put(TERRAFORMING, OptionalEnchantsConfig.CONFIG.getOrDefault("terraforming.enable", true));
         ENCHANTS.put(LAUNCHING, OptionalEnchantsConfig.CONFIG.getOrDefault("launching.enable", true));
-        ENCHANTS.put(BERSERK, OptionalEnchantsConfig.CONFIG.getOrDefault("berserk.enable", false));
         ENCHANTS.put(SOULBOUND, OptionalEnchantsConfig.CONFIG.getOrDefault("soulbound.enable", true));
 
         for (Map.Entry<SimpleEnchantBuilder, Boolean> set : ENCHANTS.entrySet()) {

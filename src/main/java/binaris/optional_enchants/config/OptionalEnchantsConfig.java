@@ -203,15 +203,6 @@ public class OptionalEnchantsConfig {
         configs.addComment("Architect enchantment config");
         configs.addKeyValuePair(new Pair<>("architect.enable", true), "boolean");
         configs.addKeyValuePair(new Pair<>("architect.distance", 1.0D), "double");
-
-        configs.emptyLine();
-
-        configs.addComment("Berserk enchantment config");
-        configs.addKeyValuePair(new Pair<>("berserk.enable", false), "boolean");
-        configs.addKeyValuePair(new Pair<>("berserk.base", 0.2D), "double");
-        configs.addKeyValuePair(new Pair<>("berserk.mult", 0.629D), "double");
-        configs.addKeyValuePair(new Pair<>("berserk.logbase", 10000), "int");
-
     }
 
 }
