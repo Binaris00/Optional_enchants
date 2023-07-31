@@ -34,9 +34,28 @@ public class OptionalEnchants_Enchantments {
     public static SimpleEnchantBuilder ENDER = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND},
             1, false, false, new Enchantment[]{Enchantments.POWER, Enchantments.INFINITY, OptionalEnchants_Enchantments.EXPLOSIVE}, null, true, true, "ender");
 
+    public static SimpleEnchantBuilder TERRAFORMING = new SimpleEnchantBuilder(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
+            1, false, true, new Enchantment[]{Enchantments.FORTUNE, Enchantments.SILK_TOUCH, OptionalEnchants_Enchantments.AUTO_SMELT, OptionalEnchants_Enchantments.TELEKINESIS}, null, true, false, "terraforming");
+
+    public static SimpleEnchantBuilder LAUNCHING = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.TRIDENT, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            3, false, false, new Enchantment[]{Enchantments.RIPTIDE}, null, true, true, "launching");
+
+    public static SimpleEnchantBuilder NIGHT_VISION = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR_HEAD, new EquipmentSlot[]{EquipmentSlot.HEAD},
+            1, false, false, null, null, true, true, "night_vision");
+
+    public static SimpleEnchantBuilder BERSERK = new SimpleEnchantBuilder(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST},
+            3, false, false, new Enchantment[]{Enchantments.PROTECTION, Enchantments.PROJECTILE_PROTECTION, Enchantments.BLAST_PROTECTION, Enchantments.FIRE_PROTECTION, OptionalEnchants_Enchantments.FAT}, null, true, true, "berserk");
+
+    public static SimpleEnchantBuilder SOULBOUND = new SimpleEnchantBuilder(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.BREAKABLE, new EquipmentSlot[]{},
+            1, false, true, null, null, true, false, "soulbound");
+
     public static SimpleEnchantBuilder EXPOSING = new Exposing_Enchantment();
 
     public static SimpleEnchantBuilder THUNDERBOLT = new Thunderbolt_Enchantment();
+
+    public static SimpleEnchantBuilder BARBARIC = new Barbaric_Enchantment();
+
+    public static SimpleEnchantBuilder CLEAVING = new Cleaving_Enchantment();
 
     //////////////////////////////////////////////////////////////////
     public static SimpleEnchantBuilder FAT = new Fat_Enchantment(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.CHEST, EquipmentSlot.FEET},
@@ -120,7 +139,12 @@ public class OptionalEnchants_Enchantments {
         ENCHANTS.put(ENDER, OptionalEnchantsConfig.CONFIG.getOrDefault("ender.enable", true));
         ENCHANTS.put(EXPOSING, OptionalEnchantsConfig.CONFIG.getOrDefault("exposing.enable", true));
         ENCHANTS.put(THUNDERBOLT, OptionalEnchantsConfig.CONFIG.getOrDefault("thunderbolt.enable", true));
-
+        ENCHANTS.put(BARBARIC, OptionalEnchantsConfig.CONFIG.getOrDefault("barbaric.enable", true));
+        ENCHANTS.put(CLEAVING, OptionalEnchantsConfig.CONFIG.getOrDefault("cleaving.enable", true));
+        ENCHANTS.put(TERRAFORMING, OptionalEnchantsConfig.CONFIG.getOrDefault("terraforming.enable", true));
+        ENCHANTS.put(LAUNCHING, OptionalEnchantsConfig.CONFIG.getOrDefault("launching.enable", true));
+        ENCHANTS.put(BERSERK, OptionalEnchantsConfig.CONFIG.getOrDefault("berserk.enable", false));
+        ENCHANTS.put(SOULBOUND, OptionalEnchantsConfig.CONFIG.getOrDefault("soulbound.enable", true));
 
         for (Map.Entry<SimpleEnchantBuilder, Boolean> set : ENCHANTS.entrySet()) {
             if(set.getValue()){

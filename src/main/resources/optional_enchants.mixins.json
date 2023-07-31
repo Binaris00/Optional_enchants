@@ -12,7 +12,14 @@
 		"TelekinesisMixin",
 		"ArrowSpeedMixin",
 		"ExplosiveMixin",
-		"EnderMixin"
+		"EnderMixin",
+		"TerraformingPlayerMixin",
+		"TerraformingBlockMixin",
+		"LaunchingMixin",
+		"HelmetEnchantsMixin",
+		"BerserkMixin",
+		"SoulboundInventoryMixin",
+		"SoulboundServerPlayerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

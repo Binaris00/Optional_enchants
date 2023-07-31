@@ -24,6 +24,13 @@
   "enchantment.optional_enchants.ender":                 "Ender",
   "enchantment.optional_enchants.exposing":              "Exposing",
   "enchantment.optional_enchants.thunderbolt":           "Thunderbolt",
+  "enchantment.optional_enchants.barbaric":              "Barbaric",
+  "enchantment.optional_enchants.cleaving":              "Cleaving",
+  "enchantment.optional_enchants.terraforming":          "Terraforming",
+  "enchantment.optional_enchants.launching":             "Launching",
+  "enchantment.optional_enchants.night_vision":          "Night vision",
+  "enchantment.optional_enchants.berserk":               "Berserk",
+  "enchantment.optional_enchants.soulbound":             "Soulbound",
 
 
 
@@ -55,5 +62,12 @@
   "enchantment.optional_enchants.explosive.desc":        "",
   "enchantment.optional_enchants.ender.desc":            "",
   "enchantment.optional_enchants.exposing.desc":         "",
-  "enchantment.optional_enchants.thunderbolt.desc":      ""
+  "enchantment.optional_enchants.thunderbolt.desc":      "",
+  "enchantment.optional_enchants.barbaric.desc":         "",
+  "enchantment.optional_enchants.cleaving.desc":         "",
+  "enchantment.optional_enchants.terraforming.desc":     "",
+  "enchantment.optional_enchants.launching.desc":        "",
+  "enchantment.optional_enchants.night_vision.desc":     "",
+  "enchantment.optional_enchants.berserk.desc":          "",
+  "enchantment.optional_enchants.soulbound.desc":        ""
 }

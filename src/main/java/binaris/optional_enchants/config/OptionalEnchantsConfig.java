@@ -161,8 +161,56 @@ public class OptionalEnchantsConfig {
 
         configs.emptyLine();
 
+        configs.addComment("Thunderbolt enchantment config");
         configs.addKeyValuePair(new Pair<>("thunderbolt.enable", true), "boolean");
         configs.addKeyValuePair(new Pair<>("thunderbolt.probability", 30), "int (max 100)");
+
+        configs.emptyLine();
+
+        configs.addComment("Barbaric enchantment config");
+        configs.addKeyValuePair(new Pair<>("barbaric.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("barbaric.damage", 0.04D), "double");
+
+        configs.addComment("Cleaving enchantment config");
+        configs.addKeyValuePair(new Pair<>("cleaving.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("cleaving.probability", 20), "int (max 100)");
+
+        configs.emptyLine();
+
+        configs.addComment("Terraforming enchantment config");
+        configs.addKeyValuePair(new Pair<>("terraforming.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("terraforming.velocity", 58), "int");
+
+        configs.emptyLine();
+
+        configs.addComment("Launching enchantment config");
+        configs.addKeyValuePair(new Pair<>("launching.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("launching.velocity", 1.0D), "double");
+
+        configs.emptyLine();
+
+        configs.addComment("Night vision enchantment config");
+        configs.addKeyValuePair(new Pair<>("night_vision.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("night_vision.always_active", false), "boolean");
+
+        configs.addComment("Psychic enchantment config");
+        configs.addKeyValuePair(new Pair<>("psychic.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("psychic.always_active", false), "boolean");
+        configs.addKeyValuePair(new Pair<>("psychic.active_range", 6.0D), "double");
+
+        configs.emptyLine();
+
+        configs.addComment("Architect enchantment config");
+        configs.addKeyValuePair(new Pair<>("architect.enable", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("architect.distance", 1.0D), "double");
+
+        configs.emptyLine();
+
+        configs.addComment("Berserk enchantment config");
+        configs.addKeyValuePair(new Pair<>("berserk.enable", false), "boolean");
+        configs.addKeyValuePair(new Pair<>("berserk.base", 0.2D), "double");
+        configs.addKeyValuePair(new Pair<>("berserk.mult", 0.629D), "double");
+        configs.addKeyValuePair(new Pair<>("berserk.logbase", 10000), "int");
 
     }
 
