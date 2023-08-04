@@ -1,7 +1,7 @@
 package binaris.optional_enchants.mixin;
 
 import binaris.optional_enchants.config.OptionalEnchantsConfig;
-import binaris.optional_enchants.enchantment.Fat_Enchantment;
+import binaris.optional_enchants.enchantments.Fat_Enchantment;
 import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.entity.LivingEntity;

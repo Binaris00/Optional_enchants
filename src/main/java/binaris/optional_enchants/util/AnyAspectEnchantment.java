@@ -11,7 +11,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
-public class AnyAspectEnchantment extends Enchantment{
+public class AnyAspectEnchantment extends Enchantment {
 
     StatusEffect effect;
     int seconds;
@@ -55,5 +55,3 @@ public class AnyAspectEnchantment extends Enchantment{
 
     public String getId(){return this.id;}
 }
-
-

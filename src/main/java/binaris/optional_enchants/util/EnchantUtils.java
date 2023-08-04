@@ -10,7 +10,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 
 public class EnchantUtils {
-
     public static boolean hasEnchant(LivingEntity livingEntity, Enchantment enchantment, EquipmentSlot slot){
         return EnchantmentHelper.getLevel(enchantment, livingEntity.getEquippedStack(slot)) >= 1;
     }

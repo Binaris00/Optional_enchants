@@ -6,9 +6,9 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
-public class EnchantmentBuilderAxe extends SimpleEnchantBuilder {
+public class EnchantmentBuilderAxe extends EnchantBuilder {
 
-    public EnchantmentBuilderAxe(Rarity weight, int maxLevel, boolean isCursed, boolean isTreasure, Enchantment[] incompatibleEnchantments, boolean forBookOffer, boolean inEnchantingTable, String id) {
+    public EnchantmentBuilderAxe(Enchantment.Rarity weight, int maxLevel, boolean isCursed, boolean isTreasure, Enchantment[] incompatibleEnchantments, boolean forBookOffer, boolean inEnchantingTable, String id) {
         super(weight, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND}, maxLevel, isCursed, isTreasure, incompatibleEnchantments, null, forBookOffer, inEnchantingTable, id);
     }
 

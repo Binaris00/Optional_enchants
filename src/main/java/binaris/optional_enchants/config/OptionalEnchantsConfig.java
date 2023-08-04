@@ -197,12 +197,6 @@ public class OptionalEnchantsConfig {
         configs.addKeyValuePair(new Pair<>("psychic.enable", true), "boolean");
         configs.addKeyValuePair(new Pair<>("psychic.always_active", false), "boolean");
         configs.addKeyValuePair(new Pair<>("psychic.active_range", 6.0D), "double");
-
-        configs.emptyLine();
-
-        configs.addComment("Architect enchantment config");
-        configs.addKeyValuePair(new Pair<>("architect.enable", true), "boolean");
-        configs.addKeyValuePair(new Pair<>("architect.distance", 1.0D), "double");
     }
 
 }

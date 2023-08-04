@@ -1,0 +1,122 @@
+{
+  "enchantment.optional_enchants.ice_bow":               "Arco helado",
+  "enchantment.optional_enchants.ice_bow.desc" :         "Da lentitud a tus enemigos cuando los disparas",
+
+
+  "enchantment.optional_enchants.ninja_style":           "Estilo Ninja",
+  "enchantment.optional_enchants.ninja_style.desc":      "Cuando eliminas cualquier criatura o jugador, obtienes un pequeño aumento de velocidad",
+
+
+  "enchantment.optional_enchants.angry_lumberjack" :     "Leñador enojado",
+  "enchantment.optional_enchants.angry_lumberjack.desc": "Cuando eliminas cualquier criatura o jugador, obtienes un pequeño aumento de rapidez",
+
+
+  "enchantment.optional_enchants.betrayer":              "Traidor",
+  "enchantment.optional_enchants.betrayer.desc":         "Aumenta el daño infligido a enemigos Illager",
+
+
+  "enchantment.optional_enchants.end_harm":              "Daño del Fin",
+  "enchantment.optional_enchants.end_harm.desc":         "Aumenta el daño infligido a enemigos del Fin",
+
+  "enchantment.optional_enchants.fat":                   "Grasa",
+  "enchantment.optional_enchants.fat.desc":              "Otorga corazones adicionales al jugador",
+
+
+  "enchantment.optional_enchants.gravitate" :            "Gravitación",
+  "enchantment.optional_enchants.gravitate.desc":        "Puedes controlar el efecto de levitación cuando estás agachado",
+
+
+  "enchantment.optional_enchants.nether_bane":           "Muerte del inframundo",
+  "enchantment.optional_enchants.nether_bane.desc":      "Aumenta el daño infligido a enemigos del Nether",
+
+
+  "enchantment.optional_enchants.skyward_shot":          "Disparo Celestial",
+  "enchantment.optional_enchants.skyward_shot.desc":     "Puede aplicar el efecto de levitación a tus enemigos",
+
+
+  "enchantment.optional_enchants.gravity_curse":         "Maldición de Gravedad",
+  "enchantment.optional_enchants.gravity_curse.desc":    "Aplica aleatoriamente el efecto de Levitación al jugador durante el combate",
+
+
+  "enchantment.optional_enchants.hunting":               "Cazador",
+  "enchantment.optional_enchants.hunting.desc":          "Aumenta el daño infligido a cerdos, ovejas, vacas y pollos",
+
+
+  "enchantment.optional_enchants.auto_smelt":            "Fundición Automática",
+  "enchantment.optional_enchants.auto_smelt.desc":       "Funde cualquier bloque que minas",
+
+
+  "enchantment.optional_enchants.wither_aspect":         "Aspecto de Wither",
+  "enchantment.optional_enchants.wither_aspect.desc":    "Aplica el efecto de Wither a tus enemigos",
+
+
+  "enchantment.optional_enchants.poison_aspect":         "Aspecto del Veneno",
+  "enchantment.optional_enchants.poison_aspect.desc":    "Aplica el efecto de Veneno a tus enemigos",
+
+
+  "enchantment.optional_enchants.slowness_aspect":       "Aspecto de Lentitud",
+  "enchantment.optional_enchants.slowness_aspect.desc":  "Aplica el efecto de Lentitud a tus enemigos",
+
+
+  "enchantment.optional_enchants.fragile_strike":        "Golpe Frágil",
+  "enchantment.optional_enchants.fragile_strike.desc":   "Aplica el efecto de Debilidad a tus enemigos",
+
+
+  "enchantment.optional_enchants.hungering_strike":      "Golpe Hambriento",
+  "enchantment.optional_enchants.hungering_strike.desc": "Aplica el efecto de Hambre a tus enemigos",
+
+
+  "enchantment.optional_enchants.breaking_curse":        "Maldición de Rotura",
+  "enchantment.optional_enchants.breaking_curse.desc" :  "Tus objetos se desgastan más rápidamente",
+
+  "enchantment.optional_enchants.telekinesis":           "Telequinesis",
+  "enchantment.optional_enchants.telekinesis.desc":      "Permite a los jugadores recuperar objetos mágicamente a distancia",
+
+
+
+
+
+
+  "enchantment.optional_enchants.arrow_speed":           "Velocidad de Flecha",
+  "enchantment.optional_enchants.arrow_speed.desc":      "Tus flechas vuelan más rápido",
+
+
+  "enchantment.optional_enchants.explosive":             "Explosivo",
+  "enchantment.optional_enchants.explosive.desc":        "En disparos totalmente cargados: las flechas explotan al impacto",
+
+
+  "enchantment.optional_enchants.ender":                 "Ender",
+  "enchantment.optional_enchants.ender.desc":            "En disparos totalmente cargados: te teletransportan a donde disparaste",
+
+
+  "enchantment.optional_enchants.exposing":              "Exponer",
+  "enchantment.optional_enchants.exposing.desc":         "las flechas dan luminicencia",
+
+
+  "enchantment.optional_enchants.thunderbolt":           "Rayo",
+  "enchantment.optional_enchants.thunderbolt.desc":      "las flechas pueden traer un rayo al golpear",
+
+
+  "enchantment.optional_enchants.barbaric":              "Barbaro",
+  "enchantment.optional_enchants.barbaric.desc":         "Da mas daño mientras menos armadura tengas",
+
+
+  "enchantment.optional_enchants.cleaving":              "Escisión",
+  "enchantment.optional_enchants.cleaving.desc":         "Daña mas la armadura del enemigo",
+
+
+  "enchantment.optional_enchants.terraforming":          "Terraformando",
+  "enchantment.optional_enchants.terraforming.desc":     "Te da una gran cantidad de velocidad al minar, pero los bloques no te dan nada",
+
+
+  "enchantment.optional_enchants.launching":             "Lanzamiento",
+  "enchantment.optional_enchants.launching.desc":        "El tridente te impulsa mas adelante",
+
+
+  "enchantment.optional_enchants.night_vision":          "Visión nocturna",
+  "enchantment.optional_enchants.night_vision.desc":     "Al agacharse: obtienes visión nocturna",
+
+
+  "enchantment.optional_enchants.soulbound":             "Soulbound",
+  "enchantment.optional_enchants.soulbound.desc":        "Tus cosas permanecen contigo aunque mueras"
+}

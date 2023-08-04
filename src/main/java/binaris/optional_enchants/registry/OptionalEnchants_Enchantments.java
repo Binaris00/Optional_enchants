@@ -2,9 +2,9 @@ package binaris.optional_enchants.registry;
 
 import binaris.optional_enchants.Optional_Enchants;
 import binaris.optional_enchants.config.OptionalEnchantsConfig;
-import binaris.optional_enchants.enchantment.*;
+import binaris.optional_enchants.enchantments.*;
 import binaris.optional_enchants.util.AnyAspectEnchantment;
-import binaris.optional_enchants.util.SimpleEnchantBuilder;
+import binaris.optional_enchants.util.EnchantBuilder;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.Enchantments;
@@ -18,77 +18,82 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class OptionalEnchants_Enchantments {
-    static Map<SimpleEnchantBuilder, Boolean> ENCHANTS = new HashMap<>();
+
+    static Map<EnchantBuilder, Boolean> ENCHANTS = new HashMap<>();
     static Map<AnyAspectEnchantment, Boolean> ENCHANTS_ASPECT = new HashMap<>();
+
+
+
 
     //////////////////////////////////////////////////////////////////
     // Herb's Extra Enchants
     //////////////////////////////////////////////////////////////////
-
-    public static SimpleEnchantBuilder ARROW_SPEED = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND},
+    public static EnchantBuilder ARROW_SPEED = new EnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND},
             3, false, false, null, null, true, true, "arrow_speed");
 
-    public static SimpleEnchantBuilder EXPLOSIVE = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+    public static EnchantBuilder EXPLOSIVE = new EnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
             2, false, false, new Enchantment[]{Enchantments.POWER, Enchantments.INFINITY}, null, true, true, "explosive");
 
-    public static SimpleEnchantBuilder ENDER = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND},
+    public static EnchantBuilder ENDER = new EnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND},
             1, false, false, new Enchantment[]{Enchantments.POWER, Enchantments.INFINITY, OptionalEnchants_Enchantments.EXPLOSIVE}, null, true, true, "ender");
 
-    public static SimpleEnchantBuilder TERRAFORMING = new SimpleEnchantBuilder(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
+    public static EnchantBuilder TERRAFORMING = new EnchantBuilder(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             1, false, true, new Enchantment[]{Enchantments.FORTUNE, Enchantments.SILK_TOUCH, OptionalEnchants_Enchantments.AUTO_SMELT, OptionalEnchants_Enchantments.TELEKINESIS}, null, true, false, "terraforming");
 
-    public static SimpleEnchantBuilder LAUNCHING = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.TRIDENT, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+    public static EnchantBuilder LAUNCHING = new EnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.TRIDENT, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
             3, false, false, new Enchantment[]{Enchantments.RIPTIDE}, null, true, true, "launching");
 
-    public static SimpleEnchantBuilder NIGHT_VISION = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR_HEAD, new EquipmentSlot[]{EquipmentSlot.HEAD},
+    public static EnchantBuilder NIGHT_VISION = new EnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR_HEAD, new EquipmentSlot[]{EquipmentSlot.HEAD},
             1, false, false, null, null, true, true, "night_vision");
 
-    public static SimpleEnchantBuilder SOULBOUND = new SimpleEnchantBuilder(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.BREAKABLE, new EquipmentSlot[]{},
+    public static EnchantBuilder SOULBOUND = new EnchantBuilder(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.BREAKABLE, new EquipmentSlot[]{},
             1, false, true, null, null, true, false, "soulbound");
 
-    public static SimpleEnchantBuilder EXPOSING = new Exposing_Enchantment();
+    public static EnchantBuilder BARBARIC = new Barbaric_Enchantment();
 
-    public static SimpleEnchantBuilder THUNDERBOLT = new Thunderbolt_Enchantment();
+    public static EnchantBuilder EXPOSING = new Exposing_Enchantment();
 
-    public static SimpleEnchantBuilder BARBARIC = new Barbaric_Enchantment();
+    public static EnchantBuilder THUNDERBOLT = new Thunderbolt_Enchantment();
 
-    public static SimpleEnchantBuilder CLEAVING = new Cleaving_Enchantment();
+    public static EnchantBuilder CLEAVING = new Cleaving_Enchantment();
 
-    //////////////////////////////////////////////////////////////////
-    public static SimpleEnchantBuilder FAT = new Fat_Enchantment(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.CHEST, EquipmentSlot.FEET},
+
+
+
+
+    public static EnchantBuilder FAT = new Fat_Enchantment(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.CHEST, EquipmentSlot.FEET},
             1, false, false, new Enchantment[]{Enchantments.PROTECTION, Enchantments.PROJECTILE_PROTECTION, Enchantments.BLAST_PROTECTION, Enchantments.FIRE_PROTECTION},
             null, true, true, "fat");
 
-    public static SimpleEnchantBuilder GRAVITATE = new SimpleEnchantBuilder(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.ARMOR_LEGS, new EquipmentSlot[]{EquipmentSlot.LEGS},
+    public static EnchantBuilder GRAVITATE = new EnchantBuilder(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.ARMOR_LEGS, new EquipmentSlot[]{EquipmentSlot.LEGS},
             3, false, true, new Enchantment[]{Enchantments.SWIFT_SNEAK},
             null, false, false, "gravitate");
 
-    public static SimpleEnchantBuilder NINJA_STYLE = new SimpleEnchantBuilder(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
+    public static EnchantBuilder NINJA_STYLE = new EnchantBuilder(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             4, false, false, null,
             null, true, true, "ninja_style");
 
-    public static SimpleEnchantBuilder ANGRY_LUMBERJACK = new SimpleEnchantBuilder(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
+    public static EnchantBuilder ANGRY_LUMBERJACK = new EnchantBuilder(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             4, false, false, null,
             null, true, true, "angry_lumberjack");
 
-    public static SimpleEnchantBuilder AUTO_SMELT = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
+    public static EnchantBuilder AUTO_SMELT = new EnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             1, false, false, new Enchantment[]{Enchantments.SILK_TOUCH, OptionalEnchants_Enchantments.TELEKINESIS},
             null, true, true, "auto_smelt");
 
-    public static SimpleEnchantBuilder TELEKINESIS = new SimpleEnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
+    public static EnchantBuilder TELEKINESIS = new EnchantBuilder(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             1, false, false, new Enchantment[]{OptionalEnchants_Enchantments.AUTO_SMELT},
             null, true, true, "telekinesis");
 
 
-    public static SimpleEnchantBuilder ICE_BOW = new Ice_Bow_Enchantment();
-    public static SimpleEnchantBuilder END_HARM = new EndHarm_Enchantment();
-    public static SimpleEnchantBuilder SKYWARDSHOT = new SkywardShot_Enchantment();
-    public static SimpleEnchantBuilder HUNTING = new Hunting_Enchantment();
-    public static SimpleEnchantBuilder GRAVITY_CURSE = new Gravity_Curse();
-    public static SimpleEnchantBuilder BREAKING_CURSE = new Breaking_Curse();
-    public static SimpleEnchantBuilder NETHER_BANE = new NetherBane_Enchantment();
-    public static SimpleEnchantBuilder BETRAYER = new Betrayer_Enchantment();
-
+    public static EnchantBuilder ICE_BOW = new Ice_Bow_Enchantment();
+    public static EnchantBuilder END_HARM = new EndHarm_Enchantment();
+    public static EnchantBuilder SKYWARDSHOT = new SkywardShot_Enchantment();
+    public static EnchantBuilder HUNTING = new Hunting_Enchantment();
+    public static EnchantBuilder GRAVITY_CURSE = new Gravity_Curse();
+    public static EnchantBuilder BREAKING_CURSE = new Breaking_Curse();
+    public static EnchantBuilder NETHER_BANE = new NetherBane_Enchantment();
+    public static EnchantBuilder BETRAYER = new Betrayer_Enchantment();
 
 
     public static AnyAspectEnchantment WITHER_ASPECT = new AnyAspectEnchantment(StatusEffects.WITHER, OptionalEnchantsConfig.CONFIG.getOrDefault("wither_aspect.effect_base_time", 120), OptionalEnchantsConfig.CONFIG.getOrDefault("wither_aspect.effect_amplifier", 1), "wither_aspect");
@@ -96,9 +101,6 @@ public class OptionalEnchants_Enchantments {
     public static AnyAspectEnchantment SLOWNESS_ASPECT = new AnyAspectEnchantment(StatusEffects.SLOWNESS, OptionalEnchantsConfig.CONFIG.getOrDefault("slowness_aspect.effect_base_time", 120), OptionalEnchantsConfig.CONFIG.getOrDefault("slowness_aspect.effect_amplifier", 1), "slowness_aspect");
     public static AnyAspectEnchantment FRAGILE_STRIKE = new AnyAspectEnchantment(StatusEffects.WEAKNESS, OptionalEnchantsConfig.CONFIG.getOrDefault("fragile_strike.effect_base_time", 80), OptionalEnchantsConfig.CONFIG.getOrDefault("fragile_strike.effect_amplifier", 1), "fragile_strike");
     public static AnyAspectEnchantment HUNGERING_STRIKE = new AnyAspectEnchantment(StatusEffects.HUNGER, OptionalEnchantsConfig.CONFIG.getOrDefault("hungering_strike.effect_base_time", 80), OptionalEnchantsConfig.CONFIG.getOrDefault("hungering_strike.effect_amplifier", 0), "hungering_strike");
-    //////////////////////////////////////////////////////////////////
-
-
 
     public static void registerEnchant(String name, Enchantment enchantment){
         Registry.register(Registries.ENCHANTMENT, new Identifier(Optional_Enchants.MOD_ID, name), enchantment);
@@ -140,9 +142,10 @@ public class OptionalEnchants_Enchantments {
         ENCHANTS.put(CLEAVING, OptionalEnchantsConfig.CONFIG.getOrDefault("cleaving.enable", true));
         ENCHANTS.put(TERRAFORMING, OptionalEnchantsConfig.CONFIG.getOrDefault("terraforming.enable", true));
         ENCHANTS.put(LAUNCHING, OptionalEnchantsConfig.CONFIG.getOrDefault("launching.enable", true));
+        ENCHANTS.put(NIGHT_VISION, OptionalEnchantsConfig.CONFIG.getOrDefault("night_vision.enable", true));
         ENCHANTS.put(SOULBOUND, OptionalEnchantsConfig.CONFIG.getOrDefault("soulbound.enable", true));
 
-        for (Map.Entry<SimpleEnchantBuilder, Boolean> set : ENCHANTS.entrySet()) {
+        for (Map.Entry<EnchantBuilder, Boolean> set : ENCHANTS.entrySet()) {
             if(set.getValue()){
                 registerEnchant(set.getKey().getId(), set.getKey());
             }
@@ -156,4 +159,5 @@ public class OptionalEnchants_Enchantments {
 
         Optional_Enchants.LOGGER.info("LOADING ENCHANTS");
     }
+
 }

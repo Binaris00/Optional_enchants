@@ -1,0 +1,26 @@
+{
+	"required": true,
+	"package": "binaris.optional_enchants.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"AngryLumberjackMixin",
+		"ArrowSpeedMixin",
+		"AutoSmeltMixin",
+		"BreakingCurseMixin",
+		"EnderMixin",
+		"ExplosiveMixin",
+		"FatMixin",
+		"GravitateMixin",
+		"HelmetEnchantsMixin",
+		"LaunchingMixin",
+		"NinjaStyleMixin",
+		"SoulboundServerPlayerMixin",
+		"SoulboundInventoryMixin",
+		"TelekinesisMixin",
+		"TerraformingBlockMixin",
+		"TerraformingPlayerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
