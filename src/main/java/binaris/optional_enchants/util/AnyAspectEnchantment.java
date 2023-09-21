@@ -1,5 +1,7 @@
 package binaris.optional_enchants.util;
 
+import binaris.optional_enchants.Optional_Enchants;
+import binaris.optional_enchants.config.Config;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.FireAspectEnchantment;
@@ -10,6 +12,9 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 
 public class AnyAspectEnchantment extends Enchantment{
 
@@ -24,6 +29,10 @@ public class AnyAspectEnchantment extends Enchantment{
         this.seconds = seconds;
         this.amplifier = amplifier;
         this.id = id;
+
+        if(Config.getBool(id + ".enable")){
+            Registry.register(Registries.ENCHANTMENT, new Identifier(Optional_Enchants.MOD_ID, id), this);
+        }
     }
 
     @Override
@@ -52,8 +61,6 @@ public class AnyAspectEnchantment extends Enchantment{
 
     @Override
     public Enchantment.Rarity getRarity() {return Rarity.RARE;}
-
-    public String getId(){return this.id;}
 }
 
 

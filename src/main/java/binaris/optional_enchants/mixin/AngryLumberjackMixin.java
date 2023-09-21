@@ -1,6 +1,6 @@
 package binaris.optional_enchants.mixin;
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.entity.EquipmentSlot;
@@ -25,9 +25,8 @@ public class AngryLumberjackMixin {
             if (user != null) {
                 if (EnchantUtils.hasEnchant(user, OptionalEnchants_Enchantments.ANGRY_LUMBERJACK, EquipmentSlot.MAINHAND)) {
                     int level = EnchantUtils.getLevel(user, OptionalEnchants_Enchantments.ANGRY_LUMBERJACK);
-
-                    EnchantUtils.appendDuration(user, StatusEffects.HASTE, OptionalEnchantsConfig.CONFIG.getOrDefault("angry_lumberjack.effect_base_time", 20) * level,
-                            OptionalEnchantsConfig.CONFIG.getOrDefault("angry_lumberjack.effect_amplifier", 1));
+                    EnchantUtils.appendDuration(user, StatusEffects.HASTE, Config.getInt("angry_lumberjack.effect_base_time") * level,
+                            Config.getInt("angry_lumberjack.effect.amplifier"));
                 }
             }
         }

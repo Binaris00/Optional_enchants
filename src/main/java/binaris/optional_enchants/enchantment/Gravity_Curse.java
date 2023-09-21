@@ -1,6 +1,6 @@
 package binaris.optional_enchants.enchantment;
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -23,18 +23,18 @@ public class Gravity_Curse extends SimpleEnchantBuilder {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if(user.getRandom().nextInt(100) <= OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.probability", 20)){
+        if(user.getRandom().nextInt(100) <= Config.getInt("gravity_curse.probability")){
             if(!user.hasStatusEffect(StatusEffects.LEVITATION)){
-                user.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.effect_base_time", 200), OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.effect_amplifier", 2)));
+                user.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, Config.getInt("gravity_curse.effect_base_time"), Config.getInt("gravity_curse.effect_amplifier")));
             }
         }
     }
 
     @Override
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
-        if(user.getRandom().nextInt(100) <= OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.probability", 20)){
+        if(user.getRandom().nextInt(100) <= Config.getInt("gravity_curse.probability")){
             if(!user.hasStatusEffect(StatusEffects.LEVITATION)){
-                user.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.effect_base_time", 200), OptionalEnchantsConfig.CONFIG.getOrDefault("gravity_curse.effect_amplifier", 2)));
+                user.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, Config.getInt("gravity_curse.effect_base_time"), Config.getInt("gravity_curse.effect_amplifier")));
             }
         }
     }

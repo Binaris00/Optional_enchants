@@ -1,6 +1,6 @@
 package binaris.optional_enchants.mixin;
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.enchantment.Fat_Enchantment;
 import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
@@ -38,7 +38,7 @@ public abstract class FatMixin {
 
 
         if(!livingEntity.getAttributes().hasModifierForAttribute(EntityAttributes.GENERIC_MAX_HEALTH, Fat_Enchantment.getUUID())){
-            EntityAttributeModifier attribute = new EntityAttributeModifier(Fat_Enchantment.getUUID(), "Fat_enchantment", OptionalEnchantsConfig.CONFIG.getOrDefault("fat.hearts_addition", 4.5D) * armor, EntityAttributeModifier.Operation.ADDITION);
+            EntityAttributeModifier attribute = new EntityAttributeModifier(Fat_Enchantment.getUUID(), "Fat_enchantment", Config.getDouble("fat.hearts_addition") * armor, EntityAttributeModifier.Operation.ADDITION);
             livingEntity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addTemporaryModifier(attribute);
         }
 

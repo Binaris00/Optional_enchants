@@ -1,6 +1,6 @@
 package binaris.optional_enchants.enchantment;
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -26,11 +26,11 @@ public class Ice_Bow_Enchantment extends SimpleEnchantBuilder {
             if(level >= 3 && Living_target.hasStatusEffect(StatusEffects.SLOWNESS)){
                 int old_duration = Living_target.getStatusEffect(StatusEffects.SLOWNESS).getDuration();
                 Living_target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,
-                        OptionalEnchantsConfig.CONFIG.getOrDefault("ice_bow.effect_base_time", 60)+old_duration, OptionalEnchantsConfig.CONFIG.getOrDefault("ice_bow_effect_amplifier", 1)));
+                        Config.getInt("ice_bow.effect_base_time")+old_duration, Config.getInt("ice_bow_effect_amplifier")));
 
             }
             else{
-                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, OptionalEnchantsConfig.CONFIG.getOrDefault("ice_bow.effect_base_time", 60), OptionalEnchantsConfig.CONFIG.getOrDefault("ice_bow_effect_amplifier", 1)));
+                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, Config.getInt("ice_bow.effect_base_time"), Config.getInt("ice_bow_effect_amplifier")));
             }
 
         }

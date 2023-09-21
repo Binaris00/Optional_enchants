@@ -1,6 +1,6 @@
 package binaris.optional_enchants;
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.ModConfig;
 import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
 import net.fabricmc.api.ModInitializer;
 
@@ -14,7 +14,7 @@ public class Optional_Enchants implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		OptionalEnchantsConfig.registerConfigs();
+		ModConfig.registerConfig();
 		OptionalEnchants_Enchantments.registerAllEnchants();
 
 		LOGGER.info("Loading Optional Enchants");

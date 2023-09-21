@@ -1,10 +1,16 @@
 package binaris.optional_enchants.util;
 
+import binaris.optional_enchants.Optional_Enchants;
+import binaris.optional_enchants.config.Config;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.Item;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ShieldItem;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
 public class SimpleEnchantBuilder extends Enchantment {
@@ -15,12 +21,12 @@ public class SimpleEnchantBuilder extends Enchantment {
     boolean isCursed;
     boolean isTreasure;
     @Nullable Enchantment[] incompatibleEnchantments;
-    @Nullable Item[] applyTo;
+    @Nullable MoreTargets specificTarget;
     boolean forBookOffer;
     boolean inEnchantingTable;
     String id;
 
-    public SimpleEnchantBuilder(Rarity weight, EnchantmentTarget type, EquipmentSlot[] equipmentSlots, int maxLevel, boolean isCursed, boolean isTreasure, Enchantment[] incompatibleEnchantments, Item[] applyTo, boolean forBookOffer, boolean inEnchantingTable, String id) {
+    public SimpleEnchantBuilder(Rarity weight, EnchantmentTarget type, EquipmentSlot[] equipmentSlots, int maxLevel, boolean isCursed, boolean isTreasure, Enchantment[] incompatibleEnchantments, @Nullable MoreTargets specificTarget, boolean forBookOffer, boolean inEnchantingTable, String id) {
         super(weight, type, equipmentSlots);
 
         this.rarity = weight;
@@ -30,12 +36,15 @@ public class SimpleEnchantBuilder extends Enchantment {
         this.isCursed = isCursed;
         this.isTreasure = isTreasure;
         this.incompatibleEnchantments = incompatibleEnchantments;
-        this.applyTo = applyTo;
+        this.specificTarget = specificTarget;
         this.forBookOffer = forBookOffer;
         this.inEnchantingTable = inEnchantingTable;
         this.id = id;
-    }
 
+        if(Config.getBool(id + ".enable")){
+            Registry.register(Registries.ENCHANTMENT, new Identifier(Optional_Enchants.MOD_ID, id), this);
+        }
+    }
     @Override
     public int getMinPower(int level) {
         switch (rarity){
@@ -75,11 +84,11 @@ public class SimpleEnchantBuilder extends Enchantment {
 
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
-        if(applyTo != null) {
-            for (Item i : applyTo) {
-                if (stack.getItem() == i) {
-                    return true;
-                }
+        if(specificTarget != null){
+            switch (specificTarget){
+                case AXE -> {return stack.getItem() instanceof AxeItem;}
+
+                case SHIELD -> {return stack.getItem() instanceof ShieldItem;}
             }
         }
         return super.isAcceptableItem(stack);
@@ -108,5 +117,8 @@ public class SimpleEnchantBuilder extends Enchantment {
     @Override
     public boolean isAvailableForEnchantedBookOffer() {return forBookOffer;}
 
-    public String getId(){return this.id;}
+    public enum MoreTargets{
+        AXE,
+        SHIELD
+    }
 }

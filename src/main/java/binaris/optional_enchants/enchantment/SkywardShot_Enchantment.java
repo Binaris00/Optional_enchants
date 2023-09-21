@@ -1,6 +1,6 @@
 package binaris.optional_enchants.enchantment;
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -26,10 +26,10 @@ public class SkywardShot_Enchantment extends SimpleEnchantBuilder {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if (user.getRandom().nextInt(100) <= OptionalEnchantsConfig.CONFIG.getOrDefault("skyward_shot.effect_probability", 10) * level){
+        if (user.getRandom().nextInt(100) <= Config.getInt("skyward_shot.effect_probability") * level){
             if(target instanceof LivingEntity livingEntity && !livingEntity.hasStatusEffect(StatusEffects.LEVITATION)){
-                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, OptionalEnchantsConfig.CONFIG.getOrDefault("skyward_shot.effect_time_base", 100),
-                        OptionalEnchantsConfig.CONFIG.getOrDefault("skyward_shot.effect_amplifier", 1)));
+                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, Config.getInt("skyward_shot.effect_time_base"),
+                        Config.getInt("skyward_shot.effect_amplifier")));
             }
         }
     }

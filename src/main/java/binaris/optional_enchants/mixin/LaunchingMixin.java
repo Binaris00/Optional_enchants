@@ -1,6 +1,6 @@
 package binaris.optional_enchants.mixin;
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.enchantment.Enchantments;
@@ -25,7 +25,7 @@ public class LaunchingMixin {
     public void addLaunchingVelocity(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo info) {
         TridentItem thisItem = (TridentItem) (Object) this;
         int i = thisItem.getMaxUseTime(stack) - remainingUseTicks;
-        velocity = user.getRotationVector().multiply(EnchantUtils.getLevel(stack, OptionalEnchants_Enchantments.LAUNCHING)).multiply(OptionalEnchantsConfig.CONFIG.getOrDefault("launching.velocity", 1.0D));
+        velocity = user.getRotationVector().multiply(EnchantUtils.getLevel(stack, OptionalEnchants_Enchantments.LAUNCHING)).multiply(Config.getDouble("launching.velocity"));
 
         if (EnchantUtils.getLevel(stack, OptionalEnchants_Enchantments.LAUNCHING) > 0 && i >= 10 && EnchantUtils.getLevel(stack, Enchantments.RIPTIDE) <= 0) {
             user.setVelocity(user.getVelocity().add(velocity));

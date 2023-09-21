@@ -1,6 +1,6 @@
 package binaris.optional_enchants.enchantment;
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
@@ -23,7 +23,7 @@ public class EndHarm_Enchantment extends SimpleEnchantBuilder {
         if(target instanceof LivingEntity livingEntity) {
             if(target.getType() == EntityType.ENDERMAN || target.getType() == EntityType.ENDERMITE || target.getType() == EntityType.ENDER_DRAGON || target.getType() == EntityType.SHULKER) {
 
-                target.damage(target.getWorld().getDamageSources().mobAttack(user), (float) (OptionalEnchantsConfig.CONFIG.getOrDefault("end_harm.attack_damage", 3.0F) * level));
+                target.damage(target.getWorld().getDamageSources().mobAttack(user), Config.getFloat("end_harm.attack_damage") * level);
                 int i = 20 + user.getRandom().nextInt(10 * level);
                 livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, i, 3));
             }

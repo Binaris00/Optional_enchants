@@ -1,6 +1,6 @@
 package binaris.optional_enchants.mixin;
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.entity.Entity;
@@ -27,7 +27,7 @@ public class ExplosiveMixin {
 
                 Entity target = entityHitResult.getEntity();
                 int level = EnchantUtils.getLevel(livingEntity, OptionalEnchants_Enchantments.EXPLOSIVE);
-                target.getWorld().createExplosion(target, target.getX(), (target.getY() + 2.0F * thisEntity.getY()) / 3.0F, target.getZ(), (float) (level * OptionalEnchantsConfig.CONFIG.getOrDefault("explosive.base_damage", 2.0F)), World.ExplosionSourceType.NONE);
+                target.getWorld().createExplosion(target, target.getX(), (target.getY() + 2.0F * thisEntity.getY()) / 3.0F, target.getZ(), level * Config.getFloat("explosive.base_damage"), World.ExplosionSourceType.NONE);
             }
         }
     }

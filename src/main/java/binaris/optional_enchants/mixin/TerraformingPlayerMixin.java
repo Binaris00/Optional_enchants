@@ -1,6 +1,6 @@
 package binaris.optional_enchants.mixin;
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.block.BlockState;
@@ -24,7 +24,7 @@ public class TerraformingPlayerMixin {
     @Inject(method = "getBlockBreakingSpeed", at = @At("RETURN"), cancellable = true)
     private void addTerraformingSpeed(BlockState block, CallbackInfoReturnable<Float> cir) {
         if(thisPlayer.getActiveHand() != null && EnchantUtils.hasEnchant(thisPlayer, OptionalEnchants_Enchantments.TERRAFORMING, EquipmentSlot.MAINHAND) && cir.getReturnValue() > 1.0)
-            cir.setReturnValue(cir.getReturnValue() + OptionalEnchantsConfig.CONFIG.getOrDefault("terraforming.velocity", 58));
+            cir.setReturnValue(cir.getReturnValue() + Config.getInt("terraforming.velocity"));
     }
 }
 

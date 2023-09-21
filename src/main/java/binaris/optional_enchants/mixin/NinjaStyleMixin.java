@@ -1,7 +1,7 @@
 package binaris.optional_enchants.mixin;
 
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.entity.EquipmentSlot;
@@ -18,15 +18,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class NinjaStyleMixin {
     @Inject(method = "onDeath", at = @At("HEAD"))
     public void Ninja_kill(DamageSource source, CallbackInfo callbackInfo) {
-        if (!(source.getAttacker() instanceof PlayerEntity)) {
+        if (source.getAttacker() instanceof PlayerEntity) {
             LivingEntity user = (LivingEntity) source.getSource();
-
             if (user != null) {
                 if (EnchantUtils.hasEnchant(user, OptionalEnchants_Enchantments.NINJA_STYLE, EquipmentSlot.MAINHAND)) {
-
                     int level = EnchantUtils.getLevel(user, OptionalEnchants_Enchantments.NINJA_STYLE);
-                    EnchantUtils.appendDuration(user, StatusEffects.SPEED, OptionalEnchantsConfig.CONFIG.getOrDefault("ninja_style.effect_base_time", 20) * level,
-                            OptionalEnchantsConfig.CONFIG.getOrDefault("ninja_style.effect.amplifier", 0));
+                    EnchantUtils.appendDuration(user, StatusEffects.SPEED, Config.getInt("ninja_style.effect_base_time") * level,
+                            Config.getInt("ninja_style.effect.amplifier"));
                 }
             }
         }

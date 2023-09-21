@@ -1,6 +1,6 @@
 package binaris.optional_enchants.enchantment;
 
-import binaris.optional_enchants.config.OptionalEnchantsConfig;
+import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
@@ -40,7 +40,7 @@ public class NetherBane_Enchantment extends SimpleEnchantBuilder {
             if(livingEntity.getType() == EntityType.ZOMBIFIED_PIGLIN || livingEntity.getType() == EntityType.PIGLIN ||
                     livingEntity.getType() == EntityType.PIGLIN_BRUTE || livingEntity.getType() == EntityType.HOGLIN || livingEntity.getType() == EntityType.ZOGLIN){
 
-                target.damage(target.getWorld().getDamageSources().mobAttack(user), (float) (OptionalEnchantsConfig.CONFIG.getOrDefault("nether_base.base_damage", 3.0F) * level));
+                target.damage(target.getWorld().getDamageSources().mobAttack(user), (Config.getFloat("nether_base.base_damage") * level));
             }
         }
     }
