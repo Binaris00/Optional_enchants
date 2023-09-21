@@ -2,25 +2,29 @@
 
 [**CurseForge**](https://www.curseforge.com)  [**Modrinth**](https://modrinth.com)
 
+This mod use code and ideas from [**Herbs-Extra Enchants**](https://www.curseforge.com/minecraft/mc-mods/herbs-extra-enchants)
+
+You can enable or disable any enchant in the config
+
 More fantastic and varied enchants to your world!
 
 ## Weapons
 
-**End Harm V** : *Increases damage dealt to End enemies : Incompatible with any damage enchant(Sharpness, Smith and other) and nether bane*
+**End Harm V** : *Increases damage dealt to End enemies. Incompatible with any damage enchant (Sharpness, Smite, and others) and Nether Bane*
 
-**Nether Bane V** : *Increases damage dealt to Nether enemies : *Incompatible with any damage enchant(Sharpness, Smith and other) and end harm*
+**Nether Bane V** : *Increases damage dealt to Nether enemies. Incompatible with any damage enchant (Sharpness, Smite, and others) and End Harm*
 
-**Wither Aspect II** : *Give wither effect to your enemies : Incompatible with any aspect enchantment*
+**Wither Aspect II** : *Gives wither effect to your enemies. Incompatible with any aspect enchantment*
 
-**Poison Aspect II** : *Give poison effect to your enemies : Incompatible with any aspect enchantment*
+**Poison Aspect II** : *Gives poison effect to your enemies. Incompatible with any aspect enchantment*
 
-**Slowness Aspect II** : *Give slowness effect to your enemies : Incompatible with any aspect enchantment*
+**Slowness Aspect II** : *Gives slowness effect to your enemies. Incompatible with any aspect enchantment*
 
-**Fragile Strike II** : *Give weakness effect to your enemies : Incompatible with any aspect enchantment*
+**Fragile Strike II** : *Gives weakness effect to your enemies. Incompatible with any aspect enchantment*
 
-**Hungering Strike II** : *Give weakness effect to your enemies : Incompatible with any aspect enchantment*
+**Hungering Strike II** : *Gives weakness effect to your enemies. Incompatible with any aspect enchantment*
 
-**Hunting III** : *Increases damage dealt to Pigs, Sheeps, Cows, Chicken*
+**Hunting III** : *Increases damage dealt to Pigs, Sheep, Cows, and Chickens*
 
 
 ### Swords
