@@ -8,6 +8,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.SmeltingRecipe;
 import net.minecraft.registry.DynamicRegistryManager;
@@ -32,12 +33,12 @@ public class AutoSmeltMixin {
         if(EnchantUtils.hasEnchant(stack, OptionalEnchants_Enchantments.AUTO_SMELT)){
 
             for(ItemStack item : returnValue){
-                Optional<SmeltingRecipe> recipe = world.getRecipeManager().getFirstMatch(RecipeType.SMELTING, new SimpleInventory(item), world);
+                Optional<RecipeEntry<SmeltingRecipe>> recipe = world.getRecipeManager().getFirstMatch(RecipeType.SMELTING, new SimpleInventory(item), world);
 
                 if (recipe.isPresent()) {
 
                     DynamicRegistryManager registryManager =  world.getRegistryManager();
-                    ItemStack smelted = recipe.get().getOutput(registryManager);
+                    ItemStack smelted = recipe.get().value().getResult(registryManager);
 
                     smelted.setCount(item.getCount());
                     itemStacks.add(smelted);
