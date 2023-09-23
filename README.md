@@ -1,64 +1,54 @@
-# Optional_enchants
+**-------------------------------------------------------------------------------------------------**
 
-[**CurseForge**](https://www.curseforge.com)  [**Modrinth**](https://modrinth.com)
+### 📖Description📖
+You want some new enchantments for your World?
+Well, this mod is perfectly for you, 
+explore and discover new enchantments for your adventures or just stay calm and enjoy with
+the support enchantments for upgrade your stats and equipment.
 
-This mod use code and ideas from [**Herbs-Extra Enchants**](https://www.curseforge.com/minecraft/mc-mods/herbs-extra-enchants)
+You don't like a specific enchantment, or just it's very overpowered/weak? Simple!,
+you can disable and enable any enchantment for this mod 
+and change their properties like the damage or something like that.
 
-You can enable or disable any enchant in the config
+This mod has 29 enchantments, good luck trying to collect everything!
 
-More fantastic and varied enchants to your world!
+If you need help,
+see the enchantment list [here](https://github.com/Binaris00/Optional_enchants/blob/1.20/enchantment_list.md)
 
-## Weapons
+**-------------------------------------------------------------------------------------------------**
+### 💻Installation💻
 
-**End Harm V** : *Increases damage dealt to End enemies. Incompatible with any damage enchant (Sharpness, Smite, and others) and Nether Bane*
+(You need to download [fabric-api](https://www.curseforge.com/minecraft/mc-mods/fabric-api) to use this mod)
 
-**Nether Bane V** : *Increases damage dealt to Nether enemies. Incompatible with any damage enchant (Sharpness, Smite, and others) and End Harm*
+Only put this mod in your mod folder with the fabric api and play, please ensure to download the lasted version for a better experience.
 
-**Wither Aspect II** : *Gives wither effect to your enemies. Incompatible with any aspect enchantment*
+**-------------------------------------------------------------------------------------------------**
 
-**Poison Aspect II** : *Gives poison effect to your enemies. Incompatible with any aspect enchantment*
+### ❓F.A.Q❓
 
-**Slowness Aspect II** : *Gives slowness effect to your enemies. Incompatible with any aspect enchantment*
+Q: When a upgrade/downgrade?
 
-**Fragile Strike II** : *Gives weakness effect to your enemies. Incompatible with any aspect enchantment*
-
-**Hungering Strike II** : *Gives weakness effect to your enemies. Incompatible with any aspect enchantment*
-
-**Hunting III** : *Increases damage dealt to Pigs, Sheep, Cows, and Chickens*
-
-
-### Swords
-**Ninja Style IV** : *When you kill any mob or player, you gain a slight speed boost.*
-
-### Axe
-**Angry Lumberjack IV** : *When you kill any mob or player, you gain a slight haste boost.*
-
-## All Armor enchants
-**Fat I** : *Grants the wearer additional hearts : Incompatible with any protection enchant.*
-
-### Legs
-**Gravitate III** : *You can control the levitation effect when you are sneaking : Incompatible with Swift sneak*
-
-## Bow and Crossbow
-### Bow
-
-**Ice bow III** : *Give slowness to your enemies when you shoot it.*
-
-**Skyward Shoot II** : *Can give levitation to your enemies*
-
-### CrossBow
-**Betrayer IV** : *Increases damage dealt to Illager enemies*
-
-## Mining Tools
-**Auto smelt I** : *Smelt the block that you mine : Incompatible with silk touch and telekinesis*
-
-**Telekinesis I** : *Allows players to magically retrieve items from a distance : Incompatible with AutoSmelt*
+A:
+I want to update this mod for any new minecraft version,
+for any downgrade maybe if a lot of people want a downgrade, I will do one :>.
 
 
+Q: What can I do if I have a error/crash?
+
+A: Open an issue in the mod repo and send the log and a little description about the error.
 
 
-## Curses
+Q: How can I disable X enchantment?
 
-**Gravity Curse II** : *Randomly inflicts the Levitation effect on you during combat* 
+A: See the .minecraft/config and search the fabric optional_enchant config (you need to run the mod first)
 
-**Breaking Curse II** : *Your items break more quickly*
+Q: Can I use this mod in my modpack?
+
+A: Of course yes, it would be an honor <3
+
+
+**-------------------------------------------------------------------------------------------------**
+
+### 📁Credits📁
+
+Some code and enchant ideas are from [**Herbs-Extra Enchants**](https://www.curseforge.com/minecraft/mc-mods/herbs-extra-enchants)
