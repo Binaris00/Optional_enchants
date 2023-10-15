@@ -8,9 +8,9 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 
-public class Cleaving_Enchantment extends SimpleEnchantBuilder {
+public class Cleaving extends SimpleEnchantBuilder {
 
-    public Cleaving_Enchantment() {
+    public Cleaving() {
         super(Rarity.UNCOMMON,
                 EnchantmentTarget.WEAPON,
                 new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},

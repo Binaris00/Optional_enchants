@@ -13,10 +13,10 @@ import net.minecraft.entity.attribute.EntityAttributes;
 
 import java.util.UUID;
 
-public class Barbaric_Enchantment extends SimpleEnchantBuilder {
+public class Barbaric extends SimpleEnchantBuilder {
 
     UUID BARBARIC_ATTRIBUTE_ID = UUID.fromString("FFFFFFFF-EEEE-DDDD-CCCC-000000000001");
-    public Barbaric_Enchantment() {
+    public Barbaric() {
         super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND}, 1, false, false,
                 null, MoreTargets.AXE, true, true, "barbaric");
     }

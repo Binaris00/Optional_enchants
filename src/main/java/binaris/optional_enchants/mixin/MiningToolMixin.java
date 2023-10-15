@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(MiningToolItem.class)
-public class BreakingCurseMixin {
+public abstract class MiningToolMixin {
     @Inject(at = @At("HEAD"), method = "postMine")
     void BreakingPosMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner, CallbackInfoReturnable<Boolean> cir){
         if(EnchantUtils.hasEnchant(stack, OptionalEnchants_Enchantments.BREAKING_CURSE)){

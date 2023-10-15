@@ -12,9 +12,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 
-public class Ice_Bow_Enchantment extends SimpleEnchantBuilder {
+public class Ice_Bow extends SimpleEnchantBuilder {
 
-    public Ice_Bow_Enchantment() {
+    public Ice_Bow() {
         super(Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
                 3, false, false, new Enchantment[]{Enchantments.FLAME}, null,
                 true, true, "ice_bow");

@@ -9,8 +9,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 
-public class SkywardShot_Enchantment extends SimpleEnchantBuilder {
-    public SkywardShot_Enchantment() {
+public class SkywardShot extends SimpleEnchantBuilder {
+    public SkywardShot() {
         super(Rarity.VERY_RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND}, 2, false, true, null, null, true, true, "skyward_shot");
     }
 

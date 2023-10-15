@@ -12,10 +12,10 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
-public class NetherBane_Enchantment extends SimpleEnchantBuilder {
+public class NetherBane extends SimpleEnchantBuilder {
 
 
-    public NetherBane_Enchantment() {
+    public NetherBane() {
         super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND}, 5, false, false, null, null, true, true, "nether_bane");
     }
 
@@ -31,7 +31,7 @@ public class NetherBane_Enchantment extends SimpleEnchantBuilder {
 
     @Override
     protected boolean canAccept(Enchantment other) {
-        return !(other instanceof DamageEnchantment || other instanceof EndHarm_Enchantment);
+        return !(other instanceof DamageEnchantment || other instanceof EndHarm);
     }
 
     @Override

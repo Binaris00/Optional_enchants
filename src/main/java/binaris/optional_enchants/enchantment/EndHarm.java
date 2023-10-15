@@ -11,10 +11,10 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
-public class EndHarm_Enchantment extends SimpleEnchantBuilder {
+public class EndHarm extends SimpleEnchantBuilder {
 
 
-    public EndHarm_Enchantment() {
+    public EndHarm() {
         super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND}, 5, false, false, null, null, true, true, "end_harm");
     }
 
@@ -42,6 +42,6 @@ public class EndHarm_Enchantment extends SimpleEnchantBuilder {
     }
     @Override
     public boolean canAccept(Enchantment other) {
-        return !(other instanceof DamageEnchantment || other instanceof NetherBane_Enchantment);
+        return !(other instanceof DamageEnchantment || other instanceof NetherBane);
     }
 }

@@ -16,15 +16,16 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(TridentItem.class)
-public class LaunchingMixin {
+public abstract class TridentItemMixin {
 
     @Unique
     Vec3d velocity;
+    @Unique
+    TridentItem tridentItem = (TridentItem) (Object) this;
 
     @Inject(method = "onStoppedUsing", at = @At("HEAD"))
-    public void addLaunchingVelocity(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo info) {
-        TridentItem thisItem = (TridentItem) (Object) this;
-        int i = thisItem.getMaxUseTime(stack) - remainingUseTicks;
+    public void StoppedUsingInject(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo info) {
+        int i = tridentItem.getMaxUseTime(stack) - remainingUseTicks;
         velocity = user.getRotationVector().multiply(EnchantUtils.getLevel(stack, OptionalEnchants_Enchantments.LAUNCHING)).multiply(Config.getDouble("launching.velocity"));
 
         if (EnchantUtils.getLevel(stack, OptionalEnchants_Enchantments.LAUNCHING) > 0 && i >= 10 && EnchantUtils.getLevel(stack, Enchantments.RIPTIDE) <= 0) {

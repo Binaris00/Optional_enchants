@@ -8,10 +8,10 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.projectile.ArrowEntity;
 
-public class Betrayer_Enchantment extends SimpleEnchantBuilder {
+public class Betrayer extends SimpleEnchantBuilder {
 
 
-    public Betrayer_Enchantment() {
+    public Betrayer() {
         super(Rarity.RARE, EnchantmentTarget.CROSSBOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
                 4, false, false, null, null, true, true, "betrayer");
     }

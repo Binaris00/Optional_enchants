@@ -17,8 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(BowItem.class)
-public class ArrowSpeedMixin {
-
+public abstract class BowItemMixin {
     @Inject(method = "onStoppedUsing", at =
     @At(value = "INVOKE",
             target = "Lnet/minecraft/entity/projectile/PersistentProjectileEntity;setVelocity(Lnet/minecraft/entity/Entity;FFFFF)V",
@@ -27,7 +26,10 @@ public class ArrowSpeedMixin {
     ),
             locals = LocalCapture.CAPTURE_FAILSOFT
     )
-    public void ArrowSpeed(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo ci, PlayerEntity playerEntity, boolean bl, ItemStack itemStack, int i, float f, boolean bl2, ArrowItem arrowItem, PersistentProjectileEntity persistentProjectileEntity){
+    public void StoppedUsingInject(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo ci, PlayerEntity playerEntity, boolean bl, ItemStack itemStack, int i, float f, boolean bl2, ArrowItem arrowItem, PersistentProjectileEntity persistentProjectileEntity){
+        // Arrow Speed
+        // Set more velocity to the persistentProjectileEntity
+        //
         if(EnchantUtils.hasEnchant(stack, OptionalEnchants_Enchantments.ARROW_SPEED)){
             persistentProjectileEntity.setVelocity(persistentProjectileEntity.getVelocity().multiply(1.0F + Config.getFloat("arrow_speed.velocitymult") * EnchantUtils.getLevel(stack, OptionalEnchants_Enchantments.ARROW_SPEED)));
         }

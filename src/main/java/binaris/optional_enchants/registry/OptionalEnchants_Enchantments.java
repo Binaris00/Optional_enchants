@@ -93,16 +93,16 @@ public class OptionalEnchants_Enchantments {
             false,
             "soulbound");
 
-    public static Enchantment EXPOSING = new Exposing_Enchantment();
+    public static Enchantment EXPOSING = new Exposing();
 
-    public static Enchantment THUNDERBOLT = new Thunderbolt_Enchantment();
+    public static Enchantment THUNDERBOLT = new Thunderbolt();
 
-    public static Enchantment BARBARIC = new Barbaric_Enchantment();
+    public static Enchantment BARBARIC = new Barbaric();
 
-    public static Enchantment CLEAVING = new Cleaving_Enchantment();
+    public static Enchantment CLEAVING = new Cleaving();
 
     //////////////////////////////////////////////////////////////////
-    public static Enchantment FAT = new Fat_Enchantment(Enchantment.Rarity.RARE,
+    public static Enchantment FAT = new Fat(Enchantment.Rarity.RARE,
             EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.CHEST, EquipmentSlot.FEET},
             1,
             false,
@@ -172,14 +172,14 @@ public class OptionalEnchants_Enchantments {
             "telekinesis");
 
 
-    public static Enchantment ICE_BOW = new Ice_Bow_Enchantment();
-    public static Enchantment END_HARM = new EndHarm_Enchantment();
-    public static Enchantment SKYWARDSHOT = new SkywardShot_Enchantment();
-    public static Enchantment HUNTING = new Hunting_Enchantment();
+    public static Enchantment ICE_BOW = new Ice_Bow();
+    public static Enchantment END_HARM = new EndHarm();
+    public static Enchantment SKYWARDSHOT = new SkywardShot();
+    public static Enchantment HUNTING = new Hunting();
     public static Enchantment GRAVITY_CURSE = new Gravity_Curse();
     public static Enchantment BREAKING_CURSE = new Breaking_Curse();
-    public static Enchantment NETHER_BANE = new NetherBane_Enchantment();
-    public static Enchantment BETRAYER = new Betrayer_Enchantment();
+    public static Enchantment NETHER_BANE = new NetherBane();
+    public static Enchantment BETRAYER = new Betrayer();
 
 
 

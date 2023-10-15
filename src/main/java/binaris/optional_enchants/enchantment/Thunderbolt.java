@@ -11,8 +11,8 @@ import net.minecraft.entity.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
-public class Thunderbolt_Enchantment extends SimpleEnchantBuilder {
-    public Thunderbolt_Enchantment() {
+public class Thunderbolt extends SimpleEnchantBuilder {
+    public Thunderbolt() {
         super(Rarity.VERY_RARE, EnchantmentTarget.CROSSBOW, new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND}, 1, false, false, new Enchantment[]{Enchantments.PIERCING}, null, true, true, "thunderbolt");
     }
 

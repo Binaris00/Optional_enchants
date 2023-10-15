@@ -7,10 +7,10 @@ import net.minecraft.entity.EquipmentSlot;
 
 import java.util.UUID;
 
-public class Fat_Enchantment extends SimpleEnchantBuilder {
+public class Fat extends SimpleEnchantBuilder {
 
     static UUID ATTRIBUTE_UUID = UUID.fromString("28AB5178-2BC4-11EE-BE56-0242AC120002");
-    public Fat_Enchantment(Rarity weight, EnchantmentTarget type, EquipmentSlot[] equipmentSlots, int maxLevel, boolean isCursed, boolean isTreasure, Enchantment[] incompatibleEnchantments, MoreTargets specificTarget, boolean forBookOffer, boolean inEnchantingTable, String id) {
+    public Fat(Rarity weight, EnchantmentTarget type, EquipmentSlot[] equipmentSlots, int maxLevel, boolean isCursed, boolean isTreasure, Enchantment[] incompatibleEnchantments, MoreTargets specificTarget, boolean forBookOffer, boolean inEnchantingTable, String id) {
         super(weight, type, equipmentSlots, maxLevel, isCursed, isTreasure, incompatibleEnchantments, specificTarget, forBookOffer, inEnchantingTable, id);
     }
 

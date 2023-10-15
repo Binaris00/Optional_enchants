@@ -10,10 +10,10 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
-public class Hunting_Enchantment extends SimpleEnchantBuilder {
+public class Hunting extends SimpleEnchantBuilder {
 
 
-    public Hunting_Enchantment() {
+    public Hunting() {
         super(Rarity.COMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND}, 3, false, false, null,
                 null, true, true, "hunting");
     }
