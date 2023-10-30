@@ -171,7 +171,17 @@ public class OptionalEnchants_Enchantments {
             true,
             "telekinesis");
 
-
+    public static Enchantment LOG_CUTTER = new SimpleEnchantBuilder(Enchantment.Rarity.RARE,
+            EnchantmentTarget.WEAPON,
+            new EquipmentSlot[]{EquipmentSlot.MAINHAND},
+            1,
+            false,
+            false,
+            null,
+            SimpleEnchantBuilder.MoreTargets.AXE,
+            true,
+            true,
+            "log_cutter");
     public static Enchantment ICE_BOW = new Ice_Bow();
     public static Enchantment END_HARM = new EndHarm();
     public static Enchantment SKYWARDSHOT = new SkywardShot();

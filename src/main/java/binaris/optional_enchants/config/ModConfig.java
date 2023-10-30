@@ -130,6 +130,11 @@ public class ModConfig {
 
         CONFIG.set("EmptyLine", "");
 
+        CONFIG.set("Comment", "Log cutter enchantment config");
+        CONFIG.set("log_cutter.enable", true);
+        
+        CONFIG.set("EmptyLine", "");
+
         CONFIG.set("Comment", "Launching enchantment config");
         CONFIG.set("launching.enable", true);
         CONFIG.set("launching.velocity", 1.0D);

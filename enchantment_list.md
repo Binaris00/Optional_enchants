@@ -187,6 +187,13 @@
 
 **Item stays in inventory after death**
 
+## Log Cutter I :
+`Applies to axes`
+
+`No incompatibilities`
+
+**Convert your logs into wood instantly**
+
 ## Gravity Curse II :
 `Applies to any armor/weapon/mining tool`
 

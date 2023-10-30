@@ -72,7 +72,8 @@
   "enchantment.optional_enchants.telekinesis":           "Telekinesis",
   "enchantment.optional_enchants.telekinesis.desc":      "Allows players to magically retrieve items from a distance",
 
-
+  "enchantment.optional_enchants.log_cutter":            "Log cutter",
+  "enchantment.optional_enchants.log_cutter.desc":       "Convert your logs into wood instantly",
 
 
 

@@ -10,6 +10,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.SmeltingRecipe;
@@ -21,10 +22,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Mixin(Block.class)
 public abstract class BlockMixin {
@@ -66,6 +64,52 @@ public abstract class BlockMixin {
                 for (ItemStack itemStack : returnValue) {
                     player.getInventory().insertStack(itemStack);
                 }
+            }
+        }
+
+        // Log cutter
+        if(entity instanceof PlayerEntity player){
+            if(EnchantUtils.hasEnchant(player, OptionalEnchants_Enchantments.LOG_CUTTER, EquipmentSlot.MAINHAND)){
+                for(ItemStack itemStack : returnValue){
+                    if (itemStack.getItem() == Items.ACACIA_LOG) {
+                        itemStacks.add(new ItemStack(Items.ACACIA_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.BIRCH_LOG){
+                        itemStacks.add(new ItemStack(Items.BIRCH_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.CHERRY_LOG) {
+                        itemStacks.add(new ItemStack(Items.CHERRY_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.DARK_OAK_LOG) {
+                        itemStacks.add(new ItemStack(Items.DARK_OAK_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.JUNGLE_LOG){
+                        itemStacks.add(new ItemStack(Items.JUNGLE_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.MANGROVE_LOG) {
+                        itemStacks.add(new ItemStack(Items.MANGROVE_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.OAK_LOG) {
+                        itemStacks.add(new ItemStack(Items.OAK_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.SPRUCE_LOG) {
+                        itemStacks.add(new ItemStack(Items.SPRUCE_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.STRIPPED_ACACIA_LOG) {
+                        itemStacks.add(new ItemStack(Items.ACACIA_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.STRIPPED_BIRCH_LOG){
+                        itemStacks.add(new ItemStack(Items.BIRCH_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.STRIPPED_CHERRY_LOG) {
+                        itemStacks.add(new ItemStack(Items.CHERRY_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.STRIPPED_DARK_OAK_LOG) {
+                        itemStacks.add(new ItemStack(Items.DARK_OAK_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.STRIPPED_JUNGLE_LOG){
+                        itemStacks.add(new ItemStack(Items.JUNGLE_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.STRIPPED_MANGROVE_LOG) {
+                        itemStacks.add(new ItemStack(Items.MANGROVE_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.STRIPPED_OAK_LOG) {
+                        itemStacks.add(new ItemStack(Items.OAK_PLANKS, 4));
+                    } else if (itemStack.getItem() == Items.STRIPPED_SPRUCE_LOG) {
+                        itemStacks.add(new ItemStack(Items.SPRUCE_PLANKS, 4));
+                    }
+                    else {
+                        itemStacks.add(itemStack);
+                    }
+                }
+
+                cir.setReturnValue(itemStacks);
             }
         }
     }
