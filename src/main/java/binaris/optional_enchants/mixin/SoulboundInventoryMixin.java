@@ -1,6 +1,6 @@
 package binaris.optional_enchants.mixin;
 
-import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
+import binaris.optional_enchants.registry.OE_Enchantments;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -24,9 +24,9 @@ public class SoulboundInventoryMixin {
     )
     private ItemStack dontDropSoulbound(ItemStack stack) {
         this.stack = ItemStack.EMPTY;
-        if (EnchantmentHelper.getLevel(OptionalEnchants_Enchantments.SOULBOUND, stack) > 0)
+        if (EnchantmentHelper.getLevel(OE_Enchantments.SOULBOUND, stack) > 0)
             this.stack = stack;
-        return (EnchantmentHelper.getLevel(OptionalEnchants_Enchantments.SOULBOUND, stack) > 0) ? ItemStack.EMPTY : stack;
+        return (EnchantmentHelper.getLevel(OE_Enchantments.SOULBOUND, stack) > 0) ? ItemStack.EMPTY : stack;
     }
 
     @ModifyArg(

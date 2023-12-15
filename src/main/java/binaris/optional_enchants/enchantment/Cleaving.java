@@ -1,14 +1,14 @@
 package binaris.optional_enchants.enchantment;
 
 import binaris.optional_enchants.config.Config;
-import binaris.optional_enchants.util.SimpleEnchantBuilder;
+import binaris.optional_enchants.util.EnchantBuilder;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 
-public class Cleaving extends SimpleEnchantBuilder {
+public class Cleaving extends EnchantBuilder {
 
     public Cleaving() {
         super(Rarity.UNCOMMON,

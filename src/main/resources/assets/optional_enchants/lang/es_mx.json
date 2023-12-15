@@ -118,5 +118,11 @@
 
 
   "enchantment.optional_enchants.soulbound":             "Soulbound",
-  "enchantment.optional_enchants.soulbound.desc":        "Tus cosas permanecen contigo aunque mueras"
+  "enchantment.optional_enchants.soulbound.desc":        "Tus cosas permanecen contigo aunque mueras",
+
+  "enchantment.optional_enchants.log_cutter":            "Log cutter",
+  "enchantment.optional_enchants.log_cutter.desc":       "Convert your logs into wood instantly",
+
+  "enchantment.optional_enchants.berserk":               "Berserk",
+  "enchantment.optional_enchants.berserk.desc":          "The more health you've lost, the more damage you deal"
 }

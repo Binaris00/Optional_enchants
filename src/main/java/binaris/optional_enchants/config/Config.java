@@ -1,62 +1,70 @@
 package binaris.optional_enchants.config;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
 public class Config {
-
-    public static String id;
-    public static String name;
-    public static File file;
-    public static boolean onFolder;
-    public static HashMap<String, String> config = new HashMap<>();
-    private static List<String> writeList = new ArrayList<>();
+    /**ID or mod folder, this can be no used**/
+    public String id;
+    /**File name**/
+    public String name;
+    public File file;
+    /**If the config is on a folder**/
+    public boolean onFolder;
+    private static final HashMap<String, String> config = new HashMap<>();
+    private final List<String> writeList = new ArrayList<>();
 
 
     public Config(String id, String name, boolean onFolder){
-        Config.id = id;
-        Config.name = name;
-        Config.onFolder = onFolder;
+        this.id = id;
+        this.name = name;
+        this.onFolder = onFolder;
     }
-
-    public void load() throws IOException {
-        if (onFolder) {
-            File folder = new File("./config/" + id + "/");
-
+    /**
+     * Create the config folder if this doesn't exist (also with the mod folder if onFolder it's true)
+     * Create the file if this doesn't exist and write the content
+     * Read all the config content
+     * */
+    public void load() {
+        try {
+            File folder = new File("./config/");
             if (!folder.exists()) {
                 folder.mkdirs();
             }
 
-            file = new File("./config/" + id + "/" + name + ".properties");
-        } else {
-            file = new File("./config/" + name +".properties");
+            if (onFolder) {
+                folder = new File("./config/" + id + "/");
 
-            if (!file.exists()) {
-                file.createNewFile();
-
-                FileWriter writer = new FileWriter(file);
-                for (String value: writeList) {
-                    writer.write(value + "\n");
+                if (!folder.exists()) {
+                    folder.mkdirs();
                 }
-                writer.close();
-            }
-            else {
-                Scanner reader = new Scanner(file);
 
-                for (int line = 1; reader.hasNextLine(); line++) {
-                    parseConfig(reader.nextLine(), line);
-                }
+                file = new File("./config/" + id + "/" + name + ".properties");
+                createFile(file);
+            } else {
+                file = new File("./config/" + name + ".properties");
+                createFile(file);
             }
+        }
+        catch (IOException e){
+            throw new RuntimeException(e);
         }
     }
 
-    public void set(String key, Object value){
+    /**
+     * Add a new value to the config information
+     * @param key special word to save and get the value
+     * @param value the value to save
+     * */
+    public void set(String key, @Nullable Object value){
         if(key.equals("Comment")){
             writeList.add("# " + value);
         }
-        else if(key.equals("EmptyLine")){
+        else if(key.equals("EmptyLine") && value == null){
             writeList.add("\n");
         }
         else {
@@ -64,7 +72,74 @@ public class Config {
             config.put(key, String.valueOf(value));
         }
     }
-    public void parseConfig(String entry, int line) {
+
+    /** add a comment to the config
+     * @param comment the comment to add
+     * */
+    public void addComment(String comment){
+        writeList.add("# " + comment);
+    }
+
+    /** add an empty line to the config
+     * */
+    public void emptyLine(){
+        writeList.add("\n");
+    }
+
+    /**
+     * Check the config and return a bool value depending on the key
+     * @param key special word to search a value
+     * @return the bool value got for the config, return false if this is null
+     * */
+    public static boolean getBool(String key){
+        return Objects.equals(config.get(key), "true");
+    }
+
+    /** Check the config and return an int value depending on the key
+     * @param key special word to search a value
+     * @return the int value got for the config, throw a runtimeException if this gets any error
+     * */
+    public static int getInt(String key){
+        try {
+            return Integer.parseInt(config.get(key));
+        }  catch (Exception e){
+            throw new RuntimeException("Error loading the config for: " + key);
+        }
+    }
+    /** Check the config and return a double value depending on the key
+     * @param key special word to search a value
+     * @return the bool value got for the config, throw a runtimeException if this gets any error
+     * */
+    public static double getDouble(String key){
+        try {
+            return Double.parseDouble(config.get(key));
+
+        } catch (Exception e){
+            throw new RuntimeException("Error loading the config for: " + key);
+        }
+    }
+    /** Check the config and return a string value depending on the key
+     * @param key special word to search a value
+     * @return the string value got for the config
+     * */
+    public static String getString(String key){return config.get(key);}
+    /** Check the config and return a float value depending on the key
+     * @param key special word to search a value
+     * @return the float value got for the config, throw a runtimeException if this gets any error
+     * */
+    public static float getFloat(String key){
+        try {
+            return Float.parseFloat(config.get(key));
+        }catch (Exception e){
+            throw new RuntimeException("Error loading the config for: " + key);
+        }
+    }
+    /** Convert the entry data to put it on the config data
+     * @param entry the line from the config file
+     * @param line the current line number from the config file, just in case if this throws a runtime exception
+     *
+     * */
+    private void parseConfig(String entry, int line) {
         if (!entry.isEmpty() && !entry.startsWith("# ")) {
             String[] parts = entry.split(" = ", 2);
             if (parts.length == 2) {
@@ -75,31 +150,24 @@ public class Config {
             }
         }
     }
+    /** Create and write the file if this doesn't exist
+     * @param file the file in the mod folder or in the config folder
+     * */
+    private void createFile(File file) throws IOException {
+        if (!file.exists()) {
+            file.createNewFile();
 
-    public static boolean getBool(String key){
-        return Objects.equals(config.get(key), "true");
-    }
-    public static int getInt(String key){
-        try {
-            return Integer.parseInt(config.get(key));
-        }  catch (Exception e){
-            throw new RuntimeException("Error loading the config for: " + key);
-        }
-    }
-    public static double getDouble(String key){
-        try {
-            return Double.parseDouble(config.get(key));
+            FileWriter writer = new FileWriter(file);
+            for (String value : writeList) {
+                writer.write(value + "\n");
+            }
+            writer.close();
+        } else {
+            Scanner reader = new Scanner(file);
 
-        } catch (Exception e){
-            throw new RuntimeException("Error loading the config for: " + key);
-        }
-    }
-    public static String getString(String key){return config.get(key);}
-    public static float getFloat(String key){
-        try {
-            return Float.parseFloat(config.get(key));
-        }catch (Exception e){
-            throw new RuntimeException("Error loading the config for: " + key);
+            for (int line = 1; reader.hasNextLine(); line++) {
+                parseConfig(reader.nextLine(), line);
+            }
         }
     }
 }

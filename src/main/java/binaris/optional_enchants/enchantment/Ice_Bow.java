@@ -1,7 +1,7 @@
 package binaris.optional_enchants.enchantment;
 
 import binaris.optional_enchants.config.Config;
-import binaris.optional_enchants.util.SimpleEnchantBuilder;
+import binaris.optional_enchants.util.EnchantBuilder;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 
@@ -12,7 +12,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 
-public class Ice_Bow extends SimpleEnchantBuilder {
+public class Ice_Bow extends EnchantBuilder {
 
     public Ice_Bow() {
         super(Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},

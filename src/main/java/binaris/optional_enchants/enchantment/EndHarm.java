@@ -1,7 +1,7 @@
 package binaris.optional_enchants.enchantment;
 
 import binaris.optional_enchants.config.Config;
-import binaris.optional_enchants.util.SimpleEnchantBuilder;
+import binaris.optional_enchants.util.EnchantBuilder;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -11,7 +11,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
-public class EndHarm extends SimpleEnchantBuilder {
+public class EndHarm extends EnchantBuilder {
 
 
     public EndHarm() {

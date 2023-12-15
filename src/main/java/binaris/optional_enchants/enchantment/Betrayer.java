@@ -1,14 +1,14 @@
 package binaris.optional_enchants.enchantment;
 
 import binaris.optional_enchants.config.Config;
-import binaris.optional_enchants.util.SimpleEnchantBuilder;
+import binaris.optional_enchants.util.EnchantBuilder;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.projectile.ArrowEntity;
 
-public class Betrayer extends SimpleEnchantBuilder {
+public class Betrayer extends EnchantBuilder {
 
 
     public Betrayer() {

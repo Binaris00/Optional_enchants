@@ -13,7 +13,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
-public class SimpleEnchantBuilder extends Enchantment {
+public class EnchantBuilder extends Enchantment {
+    /**Rare, Uncommon, Common, Very Rare*/
     Rarity rarity;
     EnchantmentTarget target;
     EquipmentSlot[] equipmentSlots;
@@ -26,7 +27,7 @@ public class SimpleEnchantBuilder extends Enchantment {
     boolean inEnchantingTable;
     String id;
 
-    public SimpleEnchantBuilder(Rarity weight, EnchantmentTarget type, EquipmentSlot[] equipmentSlots, int maxLevel, boolean isCursed, boolean isTreasure, Enchantment[] incompatibleEnchantments, @Nullable MoreTargets specificTarget, boolean forBookOffer, boolean inEnchantingTable, String id) {
+    public EnchantBuilder(Rarity weight, EnchantmentTarget type, EquipmentSlot[] equipmentSlots, int maxLevel, boolean isCursed, boolean isTreasure, Enchantment[] incompatibleEnchantments, @Nullable MoreTargets specificTarget, boolean forBookOffer, boolean inEnchantingTable, String id) {
         super(weight, type, equipmentSlots);
 
         this.rarity = weight;

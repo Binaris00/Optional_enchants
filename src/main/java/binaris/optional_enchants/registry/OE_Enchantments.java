@@ -3,15 +3,15 @@ package binaris.optional_enchants.registry;
 import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.enchantment.*;
 import binaris.optional_enchants.util.AnyAspectEnchantment;
-import binaris.optional_enchants.util.SimpleEnchantBuilder;
+import binaris.optional_enchants.util.EnchantBuilder;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffects;
 
-public class OptionalEnchants_Enchantments {
-    public static Enchantment ARROW_SPEED = new SimpleEnchantBuilder(Enchantment.Rarity.RARE,
+public abstract class OE_Enchantments {
+    public static Enchantment ARROW_SPEED = new EnchantBuilder(Enchantment.Rarity.RARE,
             EnchantmentTarget.CROSSBOW,
             new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND},
             3,
@@ -23,7 +23,7 @@ public class OptionalEnchants_Enchantments {
             true,
             "arrow_speed");
 
-    public static Enchantment EXPLOSIVE = new SimpleEnchantBuilder(Enchantment.Rarity.RARE,
+    public static Enchantment EXPLOSIVE = new EnchantBuilder(Enchantment.Rarity.RARE,
             EnchantmentTarget.BOW,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
             2, false,
@@ -34,31 +34,31 @@ public class OptionalEnchants_Enchantments {
             true,
             "explosive");
 
-    public static Enchantment ENDER = new SimpleEnchantBuilder(Enchantment.Rarity.RARE,
+    public static Enchantment ENDER = new EnchantBuilder(Enchantment.Rarity.RARE,
             EnchantmentTarget.BOW,
             new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND},
             1,
             false,
             false,
-            new Enchantment[]{Enchantments.POWER, Enchantments.INFINITY, OptionalEnchants_Enchantments.EXPLOSIVE},
+            new Enchantment[]{Enchantments.POWER, Enchantments.INFINITY, OE_Enchantments.EXPLOSIVE},
             null,
             true,
             true,
             "ender");
 
-    public static Enchantment TERRAFORMING = new SimpleEnchantBuilder(Enchantment.Rarity.VERY_RARE,
+    public static Enchantment TERRAFORMING = new EnchantBuilder(Enchantment.Rarity.VERY_RARE,
             EnchantmentTarget.DIGGER,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             1,
             false,
             true,
-            new Enchantment[]{Enchantments.FORTUNE, Enchantments.SILK_TOUCH, OptionalEnchants_Enchantments.AUTO_SMELT, OptionalEnchants_Enchantments.TELEKINESIS},
+            new Enchantment[]{Enchantments.FORTUNE, Enchantments.SILK_TOUCH, OE_Enchantments.AUTO_SMELT, OE_Enchantments.TELEKINESIS},
             null,
             true,
             false,
             "terraforming");
 
-    public static Enchantment LAUNCHING = new SimpleEnchantBuilder(Enchantment.Rarity.RARE,
+    public static Enchantment LAUNCHING = new EnchantBuilder(Enchantment.Rarity.RARE,
             EnchantmentTarget.TRIDENT,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
             3,
@@ -70,7 +70,7 @@ public class OptionalEnchants_Enchantments {
             true,
             "launching");
 
-    public static Enchantment NIGHT_VISION = new SimpleEnchantBuilder(Enchantment.Rarity.RARE,
+    public static Enchantment NIGHT_VISION = new EnchantBuilder(Enchantment.Rarity.RARE,
             EnchantmentTarget.ARMOR_HEAD,
             new EquipmentSlot[]{EquipmentSlot.HEAD},
             1,
@@ -81,7 +81,7 @@ public class OptionalEnchants_Enchantments {
             true,
             "night_vision");
 
-    public static Enchantment SOULBOUND = new SimpleEnchantBuilder(Enchantment.Rarity.VERY_RARE,
+    public static Enchantment SOULBOUND = new EnchantBuilder(Enchantment.Rarity.VERY_RARE,
             EnchantmentTarget.BREAKABLE,
             new EquipmentSlot[]{},
             1,
@@ -112,7 +112,7 @@ public class OptionalEnchants_Enchantments {
             true,
             "fat");
 
-    public static Enchantment GRAVITATE = new SimpleEnchantBuilder(Enchantment.Rarity.VERY_RARE,
+    public static Enchantment GRAVITATE = new EnchantBuilder(Enchantment.Rarity.VERY_RARE,
             EnchantmentTarget.ARMOR_LEGS,
             new EquipmentSlot[]{EquipmentSlot.LEGS},
             3,
@@ -124,7 +124,7 @@ public class OptionalEnchants_Enchantments {
             false,
             "gravitate");
 
-    public static Enchantment NINJA_STYLE = new SimpleEnchantBuilder(Enchantment.Rarity.UNCOMMON,
+    public static Enchantment NINJA_STYLE = new EnchantBuilder(Enchantment.Rarity.UNCOMMON,
             EnchantmentTarget.WEAPON,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             4,
@@ -136,49 +136,49 @@ public class OptionalEnchants_Enchantments {
             true,
             "ninja_style");
 
-    public static Enchantment ANGRY_LUMBERJACK = new SimpleEnchantBuilder(Enchantment.Rarity.UNCOMMON,
+    public static Enchantment ANGRY_LUMBERJACK = new EnchantBuilder(Enchantment.Rarity.UNCOMMON,
             EnchantmentTarget.DIGGER,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             4,
             false,
             false,
             null,
-            SimpleEnchantBuilder.MoreTargets.AXE,
+            EnchantBuilder.MoreTargets.AXE,
             true,
             true,
             "angry_lumberjack");
 
-    public static Enchantment AUTO_SMELT = new SimpleEnchantBuilder(Enchantment.Rarity.RARE,
+    public static Enchantment AUTO_SMELT = new EnchantBuilder(Enchantment.Rarity.RARE,
             EnchantmentTarget.DIGGER,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             1,
             false,
-            false, new Enchantment[]{Enchantments.SILK_TOUCH, OptionalEnchants_Enchantments.TELEKINESIS},
+            false, new Enchantment[]{Enchantments.SILK_TOUCH, OE_Enchantments.TELEKINESIS},
             null,
             true,
             true,
             "auto_smelt");
 
-    public static Enchantment TELEKINESIS = new SimpleEnchantBuilder(Enchantment.Rarity.RARE,
+    public static Enchantment TELEKINESIS = new EnchantBuilder(Enchantment.Rarity.RARE,
             EnchantmentTarget.DIGGER,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             1,
             false,
             false,
-            new Enchantment[]{OptionalEnchants_Enchantments.AUTO_SMELT},
+            new Enchantment[]{OE_Enchantments.AUTO_SMELT},
             null,
             true,
             true,
             "telekinesis");
 
-    public static Enchantment LOG_CUTTER = new SimpleEnchantBuilder(Enchantment.Rarity.RARE,
+    public static Enchantment LOG_CUTTER = new EnchantBuilder(Enchantment.Rarity.RARE,
             EnchantmentTarget.WEAPON,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             1,
             false,
             false,
             null,
-            SimpleEnchantBuilder.MoreTargets.AXE,
+            EnchantBuilder.MoreTargets.AXE,
             true,
             true,
             "log_cutter");
