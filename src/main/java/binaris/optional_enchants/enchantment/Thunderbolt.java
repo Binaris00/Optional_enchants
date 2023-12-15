@@ -1,7 +1,7 @@
 package binaris.optional_enchants.enchantment;
 
 import binaris.optional_enchants.config.Config;
-import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
+import binaris.optional_enchants.registry.OE_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import binaris.optional_enchants.util.SimpleEnchantBuilder;
 import net.minecraft.enchantment.Enchantment;
@@ -19,7 +19,7 @@ public class Thunderbolt extends SimpleEnchantBuilder {
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if (user.getRandom().nextInt(100) <= Config.getInt("thunderbolt.probability")) {
-            if (target instanceof LivingEntity livingEntity && EnchantUtils.getLevel(user, OptionalEnchants_Enchantments.THUNDERBOLT) >= 1) {
+            if (target instanceof LivingEntity livingEntity && EnchantUtils.getLevel(user, OE_Enchantments.THUNDERBOLT) >= 1) {
                 LightningEntity lightning = EntityType.LIGHTNING_BOLT.create(livingEntity.getWorld());
                 BlockPos blockPos = target.getBlockPos();
 

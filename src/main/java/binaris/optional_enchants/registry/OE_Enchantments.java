@@ -10,7 +10,7 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffects;
 
-public class OptionalEnchants_Enchantments {
+public class OE_Enchantments {
     public static Enchantment ARROW_SPEED = new SimpleEnchantBuilder(Enchantment.Rarity.RARE,
             EnchantmentTarget.CROSSBOW,
             new EquipmentSlot[]{EquipmentSlot.OFFHAND, EquipmentSlot.MAINHAND},
@@ -40,7 +40,7 @@ public class OptionalEnchants_Enchantments {
             1,
             false,
             false,
-            new Enchantment[]{Enchantments.POWER, Enchantments.INFINITY, OptionalEnchants_Enchantments.EXPLOSIVE},
+            new Enchantment[]{Enchantments.POWER, Enchantments.INFINITY, OE_Enchantments.EXPLOSIVE},
             null,
             true,
             true,
@@ -52,7 +52,7 @@ public class OptionalEnchants_Enchantments {
             1,
             false,
             true,
-            new Enchantment[]{Enchantments.FORTUNE, Enchantments.SILK_TOUCH, OptionalEnchants_Enchantments.AUTO_SMELT, OptionalEnchants_Enchantments.TELEKINESIS},
+            new Enchantment[]{Enchantments.FORTUNE, Enchantments.SILK_TOUCH, OE_Enchantments.AUTO_SMELT, OE_Enchantments.TELEKINESIS},
             null,
             true,
             false,
@@ -153,7 +153,7 @@ public class OptionalEnchants_Enchantments {
             new EquipmentSlot[]{EquipmentSlot.MAINHAND},
             1,
             false,
-            false, new Enchantment[]{Enchantments.SILK_TOUCH, OptionalEnchants_Enchantments.TELEKINESIS},
+            false, new Enchantment[]{Enchantments.SILK_TOUCH, OE_Enchantments.TELEKINESIS},
             null,
             true,
             true,
@@ -165,7 +165,7 @@ public class OptionalEnchants_Enchantments {
             1,
             false,
             false,
-            new Enchantment[]{OptionalEnchants_Enchantments.AUTO_SMELT},
+            new Enchantment[]{OE_Enchantments.AUTO_SMELT},
             null,
             true,
             true,

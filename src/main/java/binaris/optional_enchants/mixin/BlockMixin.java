@@ -1,6 +1,6 @@
 package binaris.optional_enchants.mixin;
 
-import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
+import binaris.optional_enchants.registry.OE_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -32,7 +32,7 @@ public abstract class BlockMixin {
         List<ItemStack> itemStacks = new ArrayList<>();
         List<ItemStack> returnValue = cir.getReturnValue();
 
-        if(EnchantUtils.hasEnchant(stack, OptionalEnchants_Enchantments.AUTO_SMELT)){
+        if(EnchantUtils.hasEnchant(stack, OE_Enchantments.AUTO_SMELT)){
 
             for(ItemStack item : returnValue){
                 Optional<RecipeEntry<SmeltingRecipe>> recipe = world.getRecipeManager().getFirstMatch(RecipeType.SMELTING, new SimpleInventory(item), world);
@@ -53,14 +53,14 @@ public abstract class BlockMixin {
 
         // Terraforming
         if(entity instanceof PlayerEntity player){
-            if(EnchantUtils.hasEnchant(player, OptionalEnchants_Enchantments.TERRAFORMING, EquipmentSlot.MAINHAND)){
+            if(EnchantUtils.hasEnchant(player, OE_Enchantments.TERRAFORMING, EquipmentSlot.MAINHAND)){
                 cir.setReturnValue(Collections.singletonList(ItemStack.EMPTY));
             }
         }
 
         // Telekinesis
         if (entity instanceof PlayerEntity player) {
-            if (EnchantUtils.hasEnchant(player, OptionalEnchants_Enchantments.TELEKINESIS, EquipmentSlot.MAINHAND)) {
+            if (EnchantUtils.hasEnchant(player, OE_Enchantments.TELEKINESIS, EquipmentSlot.MAINHAND)) {
                 for (ItemStack itemStack : returnValue) {
                     player.getInventory().insertStack(itemStack);
                 }
@@ -69,7 +69,7 @@ public abstract class BlockMixin {
 
         // Log cutter
         if(entity instanceof PlayerEntity player){
-            if(EnchantUtils.hasEnchant(player, OptionalEnchants_Enchantments.LOG_CUTTER, EquipmentSlot.MAINHAND)){
+            if(EnchantUtils.hasEnchant(player, OE_Enchantments.LOG_CUTTER, EquipmentSlot.MAINHAND)){
                 for(ItemStack itemStack : returnValue){
                     if (itemStack.getItem() == Items.ACACIA_LOG) {
                         itemStacks.add(new ItemStack(Items.ACACIA_PLANKS, 4));

@@ -1,7 +1,7 @@
 package binaris.optional_enchants.mixin;
 
 import binaris.optional_enchants.config.Config;
-import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
+import binaris.optional_enchants.registry.OE_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -29,7 +29,7 @@ public abstract class PersistentProjectileEntityMixin {
         // Confirm if this is an ArrowEntity and teleport the entity with any vehicle to the entity target
         // Also play an enderman teleport sound
         if(thisEntity.getOwner() instanceof LivingEntity livingEntity && thisEntity instanceof ArrowEntity){
-            if(EnchantUtils.getLevel(livingEntity, OptionalEnchants_Enchantments.ENDER) >= 1){
+            if(EnchantUtils.getLevel(livingEntity, OE_Enchantments.ENDER) >= 1){
 
                 Entity target = entityHitResult.getEntity();
                 LivingEntity owner = (LivingEntity) thisEntity.getOwner();
@@ -47,10 +47,10 @@ public abstract class PersistentProjectileEntityMixin {
         // Explosive
         // Very original, create an explosion in the target location
         if(thisEntity.getOwner() instanceof LivingEntity livingEntity && thisEntity instanceof ArrowEntity){
-            if(EnchantUtils.getLevel(livingEntity, OptionalEnchants_Enchantments.EXPLOSIVE) >= 1){
+            if(EnchantUtils.getLevel(livingEntity, OE_Enchantments.EXPLOSIVE) >= 1){
 
                 Entity target = entityHitResult.getEntity();
-                int level = EnchantUtils.getLevel(livingEntity, OptionalEnchants_Enchantments.EXPLOSIVE);
+                int level = EnchantUtils.getLevel(livingEntity, OE_Enchantments.EXPLOSIVE);
                 target.getWorld().createExplosion(target, target.getX(), (target.getY() + 2.0F * thisEntity.getY()) / 3.0F, target.getZ(), level * Config.getFloat("explosive.base_damage"), World.ExplosionSourceType.NONE);
             }
         }
@@ -62,7 +62,7 @@ public abstract class PersistentProjectileEntityMixin {
         // Confirm if this is an ArrowEntity and teleport the entity with any vehicle to the block target
         // Also play an enderman teleport sound
         if (thisEntity.getOwner() instanceof LivingEntity livingEntity && thisEntity instanceof ArrowEntity) {
-            if (EnchantUtils.getLevel(livingEntity, OptionalEnchants_Enchantments.ENDER) >= 1) {
+            if (EnchantUtils.getLevel(livingEntity, OE_Enchantments.ENDER) >= 1) {
                 LivingEntity owner = (LivingEntity) thisEntity.getOwner();
                 BlockPos blockPos = blockHitResult.getBlockPos();
 

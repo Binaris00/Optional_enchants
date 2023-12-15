@@ -2,7 +2,7 @@ package binaris.optional_enchants.mixin;
 
 import binaris.optional_enchants.config.Config;
 import binaris.optional_enchants.enchantment.Fat;
-import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
+import binaris.optional_enchants.registry.OE_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -37,8 +37,8 @@ public abstract class LivingEntityMixin {
             LivingEntity user = (LivingEntity) source.getAttacker();
 
             if (user != null) {
-                if (EnchantUtils.hasEnchant(user, OptionalEnchants_Enchantments.ANGRY_LUMBERJACK, EquipmentSlot.MAINHAND)) {
-                    int level = EnchantUtils.getLevel(user, OptionalEnchants_Enchantments.ANGRY_LUMBERJACK);
+                if (EnchantUtils.hasEnchant(user, OE_Enchantments.ANGRY_LUMBERJACK, EquipmentSlot.MAINHAND)) {
+                    int level = EnchantUtils.getLevel(user, OE_Enchantments.ANGRY_LUMBERJACK);
                     EnchantUtils.appendDuration(user, StatusEffects.HASTE, Config.getInt("angry_lumberjack.effect_base_time") * level,
                             Config.getInt("angry_lumberjack.effect.amplifier"));
                 }
@@ -50,8 +50,8 @@ public abstract class LivingEntityMixin {
         if (source.getAttacker() instanceof PlayerEntity) {
             LivingEntity user = (LivingEntity) source.getSource();
             if (user != null) {
-                if (EnchantUtils.hasEnchant(user, OptionalEnchants_Enchantments.NINJA_STYLE, EquipmentSlot.MAINHAND)) {
-                    int level = EnchantUtils.getLevel(user, OptionalEnchants_Enchantments.NINJA_STYLE);
+                if (EnchantUtils.hasEnchant(user, OE_Enchantments.NINJA_STYLE, EquipmentSlot.MAINHAND)) {
+                    int level = EnchantUtils.getLevel(user, OE_Enchantments.NINJA_STYLE);
                     EnchantUtils.appendDuration(user, StatusEffects.SPEED, Config.getInt("ninja_style.effect_base_time") * level,
                             Config.getInt("ninja_style.effect.amplifier"));
                 }
@@ -68,7 +68,7 @@ public abstract class LivingEntityMixin {
         int armor = 0;
 
         for(ItemStack stack : getArmorItems()) {
-            if (EnchantUtils.hasEnchant(stack, OptionalEnchants_Enchantments.FAT)) {
+            if (EnchantUtils.hasEnchant(stack, OE_Enchantments.FAT)) {
                 armor += 1;
             }
 
@@ -84,14 +84,14 @@ public abstract class LivingEntityMixin {
 
         // Night Vision
         // Give night vision effect when the living entity is sneaking
-        if (EnchantUtils.hasEnchant(livingEntity, OptionalEnchants_Enchantments.NIGHT_VISION, EquipmentSlot.HEAD) && livingEntity.isSneaking()
+        if (EnchantUtils.hasEnchant(livingEntity, OE_Enchantments.NIGHT_VISION, EquipmentSlot.HEAD) && livingEntity.isSneaking()
                 || Config.getBool("night_vision.always_active")) {
             livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 2000, 100, true, false, false));
         }
 
         // Gravitate
-        if(livingEntity.isSneaking() && EnchantUtils.hasEnchant(livingEntity, OptionalEnchants_Enchantments.GRAVITATE, EquipmentSlot.LEGS)){
-            int level = EnchantUtils.getLevel(livingEntity, OptionalEnchants_Enchantments.GRAVITATE, EquipmentSlot.LEGS);
+        if(livingEntity.isSneaking() && EnchantUtils.hasEnchant(livingEntity, OE_Enchantments.GRAVITATE, EquipmentSlot.LEGS)){
+            int level = EnchantUtils.getLevel(livingEntity, OE_Enchantments.GRAVITATE, EquipmentSlot.LEGS);
             livingEntity.getEquippedStack(EquipmentSlot.LEGS).damage(livingEntity.getRandom().nextInt(100) <= Config.getInt("gravitate.damage_probability") ? 1 : 0, livingEntity, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.LEGS));
 
             livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, Config.getInt("gravitate.effect_base_time"), level - 1));

@@ -1,7 +1,7 @@
 package binaris.optional_enchants;
 
-import binaris.optional_enchants.config.ModConfig;
-import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
+import binaris.optional_enchants.config.OE_Config;
+import binaris.optional_enchants.registry.OE_Enchantments;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -14,8 +14,8 @@ public class Optional_Enchants implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModConfig.registerConfig();
-		OptionalEnchants_Enchantments.registerAllEnchants();
+		OE_Config.setCONFIG();
+		OE_Enchantments.registerAllEnchants();
 
 		LOGGER.info("Loading Optional Enchants");
 		LOGGER.info("Thanks for loading my mod! -Binaris");

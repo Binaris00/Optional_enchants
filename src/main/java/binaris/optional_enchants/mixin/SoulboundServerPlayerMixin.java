@@ -1,6 +1,6 @@
 package binaris.optional_enchants.mixin;
 
-import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
+import binaris.optional_enchants.registry.OE_Enchantments;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -21,7 +21,7 @@ public class SoulboundServerPlayerMixin {
         if (!alive) {
             PlayerInventory inventory = oldPlayer.getInventory();
             for (int slot = 0; slot < inventory.size(); slot++)
-                if (EnchantmentHelper.getLevel(OptionalEnchants_Enchantments.SOULBOUND, inventory.getStack(slot)) > 0)
+                if (EnchantmentHelper.getLevel(OE_Enchantments.SOULBOUND, inventory.getStack(slot)) > 0)
                     switch (slot) {
                         case 36 -> thisEntity.getInventory().armor.set(0, inventory.getStack(36));
                         case 37 -> thisEntity.getInventory().armor.set(1, inventory.getStack(37));

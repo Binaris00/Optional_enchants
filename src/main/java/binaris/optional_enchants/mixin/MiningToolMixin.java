@@ -1,6 +1,6 @@
 package binaris.optional_enchants.mixin;
 
-import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
+import binaris.optional_enchants.registry.OE_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EquipmentSlot;
@@ -17,9 +17,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class MiningToolMixin {
     @Inject(at = @At("HEAD"), method = "postMine")
     void BreakingPosMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner, CallbackInfoReturnable<Boolean> cir){
-        if(EnchantUtils.hasEnchant(stack, OptionalEnchants_Enchantments.BREAKING_CURSE)){
+        if(EnchantUtils.hasEnchant(stack, OE_Enchantments.BREAKING_CURSE)){
 
-            int level = EnchantUtils.getLevel(stack, OptionalEnchants_Enchantments.BREAKING_CURSE);
+            int level = EnchantUtils.getLevel(stack, OE_Enchantments.BREAKING_CURSE);
             stack.damage(2 * level, miner, (e) -> {
                 e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND);
             });

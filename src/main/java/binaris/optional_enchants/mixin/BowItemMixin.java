@@ -1,7 +1,7 @@
 package binaris.optional_enchants.mixin;
 
 import binaris.optional_enchants.config.Config;
-import binaris.optional_enchants.registry.OptionalEnchants_Enchantments;
+import binaris.optional_enchants.registry.OE_Enchantments;
 import binaris.optional_enchants.util.EnchantUtils;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -30,8 +30,8 @@ public abstract class BowItemMixin {
         // Arrow Speed
         // Set more velocity to the persistentProjectileEntity
         //
-        if(EnchantUtils.hasEnchant(stack, OptionalEnchants_Enchantments.ARROW_SPEED)){
-            persistentProjectileEntity.setVelocity(persistentProjectileEntity.getVelocity().multiply(1.0F + Config.getFloat("arrow_speed.velocitymult") * EnchantUtils.getLevel(stack, OptionalEnchants_Enchantments.ARROW_SPEED)));
+        if(EnchantUtils.hasEnchant(stack, OE_Enchantments.ARROW_SPEED)){
+            persistentProjectileEntity.setVelocity(persistentProjectileEntity.getVelocity().multiply(1.0F + Config.getFloat("arrow_speed.velocitymult") * EnchantUtils.getLevel(stack, OE_Enchantments.ARROW_SPEED)));
         }
     }
 }
